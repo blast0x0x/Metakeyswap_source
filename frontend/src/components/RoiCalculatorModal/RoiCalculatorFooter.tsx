@@ -60,11 +60,11 @@ const RoiCalculatorFooter: React.FC<React.PropsWithChildren<RoiCalculatorFooterP
     <>
       <Text>
         {t(
-          'The Multiplier represents the proportion of OVE rewards each farm receives, as a proportion of the OVE produced each block.',
+          'The Multiplier represents the proportion of MN rewards each farm receives, as a proportion of the MN produced each block.',
         )}
       </Text>
       <Text my="24px">
-        {t('For example, if a 1x farm received 1 OVE per block, a 40x farm would receive 40 OVE per block.')}
+        {t('For example, if a 1x farm received 1 MN per block, a 40x farm would receive 40 MN per block.')}
       </Text>
       <Text>{t('This amount is already included in all APR calculations for the farm.')}</Text>
     </>,
@@ -97,7 +97,7 @@ const RoiCalculatorFooter: React.FC<React.PropsWithChildren<RoiCalculatorFooterP
             )}
             {!Number.isFinite(apy) ? (
               <Text color="textSubtle" small>
-                *{isFarm ? t('Base APR (OVE yield only)') : t('APR')}
+                *{isFarm ? t('Base APR (MN yield only)') : t('APR')}
               </Text>
             ) : (
               <Text color="textSubtle" small>

@@ -113,7 +113,7 @@ const Footer = () => {
           {t('No registration needed.')}
         </Text>
 
-        <Link external href="https://docs.ovenswap.online/">
+        <Link external href="https://docs.metakeyswap.com/">
           {t('Learn how to start')}
         </Link>
         {!account && <ConnectWalletButton mt="24px" />}

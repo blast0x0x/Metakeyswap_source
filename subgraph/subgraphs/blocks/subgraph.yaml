@@ -1,0 +1,25 @@
+specVersion: 0.0.2
+description: Binance Smart Chain Blocks
+repository: https://github.com/pancakeswap
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: BSCValidatorSet
+    network: mainnet
+    source:
+      address: '0x6f627b6967f196F5AcdB2913cc4B4751350ca1E2'
+      abi: BSCValidatorSet
+      startBlock: 6567506
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ./mappings/index.ts
+      entities:
+        - Block
+      abis:
+        - name: BSCValidatorSet
+          file: ./abis/BSCValidatorSet.json
+      blockHandlers:
+        - handler: handleBlock

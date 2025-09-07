@@ -93,17 +93,17 @@ const Launch: React.FC = () => {
                       {t('PreSale')}                              
                     </Heading>
                     {/*
-                    <KycExternalLink href="https://github.com/cyberscope-io/audits/blob/main/2-ove/audit.pdf">
+                    <KycExternalLink href="https://github.com/cyberscope-io/audits/blob/main/2-mn/audit.pdf">
                       {t('KYC')}
                     </KycExternalLink>
                     */}
-                    <AuditExternalLink href="https://github.com/cyberscope-io/audits/blob/main/2-ove/audit.pdf">
+                    <AuditExternalLink href="https://github.com/cyberscope-io/audits/blob/main/2-mn/audit.pdf">
                       {t('AUDIT')}
                     </AuditExternalLink>                    
                   </Flex>                    
                   <Flex flex="1" flexDirection="column" mr={['8px', 0]}>
                     <Heading scale="lg" color="text">
-                      {t(`Participate in Exclusive IDO's and be early on the OvenSwap project.`)}
+                      {t(`Participate in Exclusive IDO's and be early on the MetakeySwap project.`)}
                     </Heading>
                     <Heading scale="md" color="text" mt="20px">
                       {t(`PreSale Start`)} : {t(`${getUTCTime(launch.start)}`)} 

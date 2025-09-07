@@ -80,7 +80,7 @@ const Menu = () => {
                 <Button
                   variant="subtle"
                   as="a"
-                  href="https://docs.ovenswap.online/products/prediction"
+                  href="https://docs.metakeyswap.com/products/prediction"
                   target="_blank"
                   rel="noreferrer noopener"
                   width="48px"

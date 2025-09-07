@@ -1,0 +1,11 @@
+"""
+Binance Smart Chain blocks
+"""
+type Block @entity {
+    "ID (hash)"
+    id: ID!
+    "Number"
+    number: BigInt!
+    "Timestamp"
+    timestamp: BigInt!
+}

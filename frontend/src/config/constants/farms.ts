@@ -13,7 +13,7 @@ const farms: SerializedFarmConfig[] = [
   {
     pid: 0,
     v1pid: 0,
-    lpSymbol: 'OVE',
+    lpSymbol: 'MN',
     lpAddresses: {
       97: '0x0d5556E58862A21db65B4Aa180da231cfE6140fE',
       56: '0x4Ec67A8AFFC0d7F0f765A31ae65815ba4C9CE1a8',
@@ -22,13 +22,13 @@ const farms: SerializedFarmConfig[] = [
       97: '0x0d5556E58862A21db65B4Aa180da231cfE6140fE',
       56: '0x0d5556E58862A21db65B4Aa180da231cfE6140fE',
     },
-    token: serializedTokens.ove,
-    quoteToken: serializedTokens.ove,
+    token: serializedTokens.mn,
+    quoteToken: serializedTokens.mn,
   },
   {
     pid: 1,
     v1pid: 1,
-    lpSymbol: 'OVE-BNB LP',
+    lpSymbol: 'MN-BNB LP',
     lpAddresses: {
       97: '0x4Ec67A8AFFC0d7F0f765A31ae65815ba4C9CE1a8',
       56: CAKE_BNB_LP_MAINNET,
@@ -38,7 +38,7 @@ const farms: SerializedFarmConfig[] = [
       56: CAKE_BNB_LP_MAINNET,
     },
 
-    token: serializedTokens.ove,
+    token: serializedTokens.mn,
     quoteToken: serializedTokens.wbnb,
   },
   {
@@ -59,7 +59,7 @@ const farms: SerializedFarmConfig[] = [
   {
     pid: 3,
     v1pid: 3,
-    lpSymbol: 'OVE-BUSD LP',
+    lpSymbol: 'MN-BUSD LP',
     lpAddresses: {
       97: '0x952BEDC8737beB0850871f67EbdBAC2719d36323',
       56: '0x952BEDC8737beB0850871f67EbdBAC2719d36323',
@@ -68,7 +68,7 @@ const farms: SerializedFarmConfig[] = [
       97: '0x952BEDC8737beB0850871f67EbdBAC2719d36323',
       56: '0x952BEDC8737beB0850871f67EbdBAC2719d36323',
     },
-    token: serializedTokens.ove,
+    token: serializedTokens.mn,
     quoteToken: serializedTokens.busd,
   },
   

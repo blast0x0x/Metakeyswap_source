@@ -124,4 +124,4 @@ export const DEFAULT_OUTPUT_CURRENCY = '0x0d5556E58862A21db65B4Aa180da231cfE6140
 export const GELATO_HANDLER = 'pancakeswap'
 export const GENERIC_GAS_LIMIT_ORDER_EXECUTION = BigNumber.from(500000)
 
-export const LIMIT_ORDERS_DOCS_URL = 'https://docs.ovenswap.online/products/pancakeswap-exchange/limit-orders'
+export const LIMIT_ORDERS_DOCS_URL = 'https://docs.metakeyswap.com/products/pancakeswap-exchange/limit-orders'

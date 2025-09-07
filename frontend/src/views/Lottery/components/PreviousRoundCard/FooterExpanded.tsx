@@ -72,7 +72,7 @@ const PreviousRoundCardFooter: React.FC<React.PropsWithChildren<{ lotteryNodeDat
             <Balance
               fontSize="14px"
               color="textSubtle"
-              unit=" OVE"
+              unit=" MN"
               value={getBalanceNumber(lotteryNodeData?.amountCollectedInCake)}
               decimals={0}
             />

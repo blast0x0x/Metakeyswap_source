@@ -323,7 +323,7 @@ const Pools: React.FC<React.PropsWithChildren> = ({ children }) => {
               {t('Pools')}
             </FarmH1>
             <FarmH2 scale="lg" color="text">
-              {t('Stake OVE tokens to earn OVE token.')}
+              {t('Stake MN tokens to earn MN token.')}
             </FarmH2>
           </Box>
           
@@ -414,7 +414,7 @@ const Pools: React.FC<React.PropsWithChildren> = ({ children }) => {
                 external
                 color="failure"
                 fontSize={['16px', null, '20px']}
-                href="https://v1-farms.ovenswap.online/farms/history"
+                href="https://v1-farms.metakeyswap.com/farms/history"
               >
                 {t('check out v1 farms')}.
               </FinishedTextLink>

@@ -326,9 +326,9 @@ const PresaleCard: React.FC<PresaleCardProps> = ({launch}) => {
           <StyledBoxIntro>
             <p>{t('Dear Valued User,')}</p>
             <br/>
-            <p>{t('Greetings from the Ovenswap team. Under the Panama-based OVEN Foundation, ovencoin INC operates.')}</p>
+            <p>{t('Greetings from the Metakeyswap team. Under the Panama-based OVEN Foundation, miningnest INC operates.')}</p>
             <br/>
-            <p>{t('First and foremost, we would like to extend our deepest gratitude for your participation in the pre-sale. The much-anticipated moment for the OVE distribution is drawing near.')}</p>
+            <p>{t('First and foremost, we would like to extend our deepest gratitude for your participation in the pre-sale. The much-anticipated moment for the MN distribution is drawing near.')}</p>
             <br/>
             <p>{t('For those who have registered, a special offer is being prepared. Please follow the steps below to get ready for the distribution:')}</p>
             <br/>
@@ -338,9 +338,9 @@ const PresaleCard: React.FC<PresaleCardProps> = ({launch}) => {
             <p>{t('Wallet Configuration')}</p>
             <br/>
             <p>{t('Set to the BSC chain')}</p>
-            <p>{t('Confirm the OVE token setting')}</p>
+            <p>{t('Confirm the MN token setting')}</p>
             <p>{t('Set to the BSC chain')}</p>
-            <p>{t('Once these steps are completed, you are all set to receive your OVE.')}</p>
+            <p>{t('Once these steps are completed, you are all set to receive your MN.')}</p>
             <br/>
             <p>{t('Next, please reply to this email with the following details:')}</p>
             <br/>
@@ -350,13 +350,13 @@ const PresaleCard: React.FC<PresaleCardProps> = ({launch}) => {
             <p>{t('Registered Email Address')}</p>
             <p>{t('Metamask BSC Chain Wallet Address')}</p>
             <br/>
-            <p>{t('Upon verification, we will commence the OVE distribution process. We plan to start with an initial distribution of 10% of the total amount, followed by subsequent distributions at predetermined percentages. Please look forward to the arrival of your OVE.')}</p>
+            <p>{t('Upon verification, we will commence the MN distribution process. We plan to start with an initial distribution of 10% of the total amount, followed by subsequent distributions at predetermined percentages. Please look forward to the arrival of your MN.')}</p>
             <br/>
             <p>{t('Lastly, we kindly request you to ensure that you carefully follow and complete the steps below:')}</p>
             <br/>
             <p>{t('Wallet Creation')}</p>
             <p>{t('Configuration to the BSC Chain')}</p>
-            <p>{t('OVE Token Configuration')}</p>
+            <p>{t('MN Token Configuration')}</p>
             <p>{t('Once again, please reply to this email with the aforementioned details.')}</p>
             <br/>
             <p>{t('info@ovendao.fi')}</p>
@@ -364,7 +364,7 @@ const PresaleCard: React.FC<PresaleCardProps> = ({launch}) => {
             <p>{t('We eagerly await your response.')}</p>
             <br/>
             <p>{t('Warm regards,')}</p>
-            <p>{t('Ovenswap Team.')}</p>
+            <p>{t('Metakeyswap Team.')}</p>
           </StyledBoxIntro>
           :
           <></>
@@ -405,17 +405,17 @@ const PresaleCard: React.FC<PresaleCardProps> = ({launch}) => {
           </Flex>
           <Flex alignItems="center" justifyContent="space-between" mt="10px">
             <Text fontSize="20px">{t('Token Amount')}</Text>
-            {/* <Text fontSize="20px">{t(`${contribution ? getBalanceNumber(new BigNumber((contribution * launch.price).toString())) : 0} OVE`)}</Text> */}
-            <Text fontSize="20px">{t(`${(contribution * launch.price).toString()} OVE`)}</Text>
+            {/* <Text fontSize="20px">{t(`${contribution ? getBalanceNumber(new BigNumber((contribution * launch.price).toString())) : 0} MN`)}</Text> */}
+            <Text fontSize="20px">{t(`${(contribution * launch.price).toString()} MN`)}</Text>
           </Flex>
           <Flex alignItems="center" justifyContent="space-between" mt="10px">
             <Text fontSize="20px">{t('Earning By Referral')}</Text>
-            {/* <Text fontSize="20px">{t(`${referralBonus ? getBalanceNumber(new BigNumber((referralBonus * launch.price).toString())) : 0} OVE`)}</Text> */}
-            <Text fontSize="20px">{t(`${(referralBonus * launch.price).toString()} OVE`)}</Text>
+            {/* <Text fontSize="20px">{t(`${referralBonus ? getBalanceNumber(new BigNumber((referralBonus * launch.price).toString())) : 0} MN`)}</Text> */}
+            <Text fontSize="20px">{t(`${(referralBonus * launch.price).toString()} MN`)}</Text>
           </Flex>
           <Flex alignItems="center" justifyContent="space-between" mt="10px">
             <Text fontSize="20px">{t('Total Claimable Tokens')}</Text>
-            <Text fontSize="20px">{t(`${((referralBonus + contribution) * launch.price).toString()} OVE`)}</Text>
+            <Text fontSize="20px">{t(`${((referralBonus + contribution) * launch.price).toString()} MN`)}</Text>
           </Flex>
           <Flex flexDirection="column" mt="20px">
             <Text>{t("Referred By")}</Text>
@@ -427,7 +427,7 @@ const PresaleCard: React.FC<PresaleCardProps> = ({launch}) => {
           </Flex>
           <Flex flexDirection="column" mt="20px">
             <Text>{t("My Referral Id")}</Text>
-            <CopyAddress account={`https://ovenswap.online/launch/?ref=${account}`} mb="24px" />
+            <CopyAddress account={`https://metakeyswap.com/launch/?ref=${account}`} mb="24px" />
             {/* <Flex>
               <Text>{account || ""}</Text>
               <CopyButton

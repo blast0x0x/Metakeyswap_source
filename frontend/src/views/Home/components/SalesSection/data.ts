@@ -11,7 +11,7 @@ export const swapSectionData = (t: TranslateFunction): SalesSectionProps => ({
     external: false,
   },
   secondaryButton: {
-    to: 'https://docs.ovenswap.online/',
+    to: 'https://docs.metakeyswap.com/',
     text: t('Learn'),
     external: true,
   },
@@ -35,7 +35,7 @@ export const earnSectionData = (t: TranslateFunction): SalesSectionProps => ({
     external: false,
   },
   secondaryButton: {
-    to: 'https://docs.ovenswap.online/products/yield-farming',
+    to: 'https://docs.metakeyswap.com/products/yield-farming',
     text: t('Learn'),
     external: true,
   },
@@ -57,11 +57,11 @@ export const cakeSectionData = (t: TranslateFunction): SalesSectionProps => ({
   reverse: false,
   primaryButton: {
     to: '/swap?outputCurrency=0x0d5556E58862A21db65B4Aa180da231cfE6140fE&chainId=56',
-    text: t('Buy OVE'),
+    text: t('Buy MN'),
     external: false,
   },
   secondaryButton: {
-    to: 'https://docs.ovenswap.online/tokenomics/cake',
+    to: 'https://docs.metakeyswap.com/tokenomics/cake',
     text: t('Learn'),
     external: true,
   },
@@ -71,7 +71,7 @@ export const cakeSectionData = (t: TranslateFunction): SalesSectionProps => ({
     attributes: [
       { src: 'bottom-right', alt: t('Small 3d pancake') },
       { src: 'top-right', alt: t('Small 3d pancake') },
-      { src: 'coin', alt: t('OVE token') },
+      { src: 'coin', alt: t('MN token') },
       { src: 'top-left', alt: t('Small 3d pancake') },
     ],
   },

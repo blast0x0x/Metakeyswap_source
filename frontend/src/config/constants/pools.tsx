@@ -20,7 +20,7 @@ export const vaultPoolConfig = {
     autoCompoundFrequency: 5000,
     gasLimit: 380000,
     tokenImage: {
-      primarySrc: `/images/tokens/${bscTokens.ove.address}.svg`,
+      primarySrc: `/images/tokens/${bscTokens.mn.address}.svg`,
       secondarySrc: '/images/tokens/autorenew.svg',
     },
   },
@@ -30,7 +30,7 @@ export const vaultPoolConfig = {
     autoCompoundFrequency: 5000,
     gasLimit: 500000,
     tokenImage: {
-      primarySrc: `/images/tokens/${bscTokens.ove.address}.svg`,
+      primarySrc: `/images/tokens/${bscTokens.mn.address}.svg`,
       secondarySrc: '/images/tokens/autorenew.svg',
     },
   },
@@ -40,7 +40,7 @@ export const vaultPoolConfig = {
     autoCompoundFrequency: 5000,
     gasLimit: 500000,
     tokenImage: {
-      primarySrc: `/images/tokens/${bscTokens.ove.address}.svg`,
+      primarySrc: `/images/tokens/${bscTokens.mn.address}.svg`,
       secondarySrc: '/images/tokens/autorenew.svg',
     },
   },
@@ -50,7 +50,7 @@ export const vaultPoolConfig = {
     autoCompoundFrequency: 1,
     gasLimit: 500000,
     tokenImage: {
-      primarySrc: `/images/tokens/${bscTokens.ove.address}.svg`,
+      primarySrc: `/images/tokens/${bscTokens.mn.address}.svg`,
       secondarySrc: `/images/tokens/ifo-pool-icon.svg`,
     },
   },
@@ -59,8 +59,8 @@ export const vaultPoolConfig = {
 export const livePools: SerializedPoolConfig[] = [
   {
     sousId: 0,
-    stakingToken: serializedTokens.ove,
-    earningToken: serializedTokens.ove,
+    stakingToken: serializedTokens.mn,
+    earningToken: serializedTokens.mn,
     contractAddress: {
       97: '0x1B87798F41b8c2e01Eb3666a8816CB79833334F2',
       56: '0x1B87798F41b8c2e01Eb3666a8816CB79833334F2',
@@ -72,8 +72,8 @@ export const livePools: SerializedPoolConfig[] = [
   },
   // {
   //   sousId: 291,
-  //   stakingToken: serializedTokens.ove,
-  //   earningToken: serializedTokens.ove,
+  //   stakingToken: serializedTokens.mn,
+  //   earningToken: serializedTokens.mn,
   //   contractAddress: {
   //     56: '0x1B87798F41b8c2e01Eb3666a8816CB79833334F2',
   //     97: '',

@@ -144,19 +144,19 @@ const config: (t: ContextApi['t'], isDark: boolean, languageCode?: string, chain
         items: [
           {
             label: t('Audit'),
-            href: 'https://github.com/cyberscope-io/audits/blob/main/2-ove/audit.pdf',
+            href: 'https://github.com/cyberscope-io/audits/blob/main/2-mn/audit.pdf',
             type: DropdownMenuItemType.EXTERNAL_LINK,
           },
       
           {
             label: t('Twitter'),
-            href: 'https://twitter.com/ovenswapprom',
+            href: 'https://twitter.com/metakeyswapprom',
             type: DropdownMenuItemType.EXTERNAL_LINK,
           },
          
           {
             label: t('Telegram'),
-            href: 'https://t.me/ovencoin',
+            href: 'https://t.me/miningnest',
             type: DropdownMenuItemType.EXTERNAL_LINK,
           },
         ]

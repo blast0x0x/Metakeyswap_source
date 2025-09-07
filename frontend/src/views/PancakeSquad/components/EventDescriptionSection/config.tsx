@@ -35,7 +35,7 @@ const eventDescriptionConfigBuilder = ({ t }: EventDescriptionType) => ({
     },
   ],
   primaryButton: {
-    to: 'https://docs.ovenswap.online/',
+    to: 'https://docs.metakeyswap.com/',
     text: t('View Documentation'),
     external: true,
     isDisplayed: false,

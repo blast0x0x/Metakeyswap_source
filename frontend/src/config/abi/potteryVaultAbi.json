@@ -13,7 +13,7 @@
         "type": "address"
       },
       {
-        "internalType": "contract IOvenSwapPotteryDraw",
+        "internalType": "contract IMetakeySwapPotteryDraw",
         "name": "_potteryDraw",
         "type": "address"
       },

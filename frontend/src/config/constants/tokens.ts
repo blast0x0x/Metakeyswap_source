@@ -4,9 +4,9 @@ const CAKE_MAINNET = new Token(
   ChainId.BSC,
   '0x0d5556E58862A21db65B4Aa180da231cfE6140fE',
   18,
-  'OVE',
-  'OvenSwap Token',
-  'https://ovenswap.online/',
+  'MN',
+  'MetakeySwap Token',
+  'https://metakeyswap.com/',
 )
 
 const CAKE_TESTNET = new Token(
@@ -15,7 +15,7 @@ const CAKE_TESTNET = new Token(
   18,
   'CAKE',
   'PancakeSwap Token',
-  'https://ovenswap.online/',
+  'https://metakeyswap.com/',
 )
 
 const USDC_BSC = new Token(
@@ -84,7 +84,7 @@ export const CAKE = {
   [ChainId.BSC_TESTNET]: CAKE_TESTNET,
 }
 
-export const OVE = {
+export const MN = {
   [ChainId.BSC]: CAKE_MAINNET,
   [ChainId.BSC_TESTNET]: CAKE_TESTNET,
 }
@@ -153,13 +153,13 @@ export const bscTokens = {
     'BNB',
     'https://www.binance.com/',
   ),
-  ove: new Token(
+  mn: new Token(
     ChainId.BSC,
     '0x0d5556E58862A21db65B4Aa180da231cfE6140fE',
     18,
-    'OVE',
-    'OvenSwap Finance',
-    'https://ovenswap.online',
+    'MN',
+    'MetakeySwap Finance',
+    'https://metakeyswap.com',
   ),
   cake: CAKE_MAINNET,
   gmi: new Token(ChainId.BSC, '0x93D8d25E3C9A847a5Da79F79ecaC89461FEcA846', 18, 'GMI', 'Gamifi', 'https://gamifi.gg/'),
@@ -357,7 +357,7 @@ export const bscTokens = {
     18,
     'SYRUP',
     'SyrupBar Token',
-    'https://ovenswap.online/',
+    'https://metakeyswap.com/',
   ),
   pha: new Token(
     ChainId.BSC,
@@ -2433,7 +2433,7 @@ export const bscTestnetTokens = {
     18,
     'SYRUP',
     'SyrupBar Token',
-    'https://ovenswap.online/',
+    'https://metakeyswap.com/',
   ),
   bake: new Token(
     ChainId.BSC_TESTNET,

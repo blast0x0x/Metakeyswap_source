@@ -71,10 +71,10 @@ const LotteryCardData: IconCardData = {
 const bottomLeftImage = {
   path: '/images/home/prediction-cards/',
   attributes: [
-    { src: 'bottom-left', alt: 'OVE card' },
-    { src: 'green', alt: 'Green OVE card with up arrow' },
-    { src: 'red', alt: 'Red OVE card with down arrow' },
-    { src: 'top-right', alt: 'OVE card' },
+    { src: 'bottom-left', alt: 'MN card' },
+    { src: 'green', alt: 'Green MN card with up arrow' },
+    { src: 'red', alt: 'Red MN card with down arrow' },
+    { src: 'top-right', alt: 'MN card' },
   ],
 }
 

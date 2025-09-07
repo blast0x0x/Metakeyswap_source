@@ -92,9 +92,9 @@ const PlaceBidModal: React.FC<React.PropsWithChildren<PlaceBidModalProps>> = ({
 
   useEffect(() => {
     if (userNotEnoughCake) {
-      setErrorText(t('Insufficient OVE balance'))
+      setErrorText(t('Insufficient MN balance'))
     } else if (!isMoreThanInitialBidAmount && isFirstBid) {
-      setErrorText(t('First bid must be %initialBidAmount% OVE or more.', { initialBidAmount }))
+      setErrorText(t('First bid must be %initialBidAmount% MN or more.', { initialBidAmount }))
     } else if (!isMultipleOfTen) {
       setErrorText(t('Bid must be a multiple of 10'))
     } else {
@@ -141,7 +141,7 @@ const PlaceBidModal: React.FC<React.PropsWithChildren<PlaceBidModalProps>> = ({
       <ExistingInfo>
         <Flex justifyContent="space-between">
           <Text>{t('Your existing bid')}</Text>
-          <Text>{t('%num% OVE', { num: getBalanceNumber(amount).toLocaleString() })}</Text>
+          <Text>{t('%num% MN', { num: getBalanceNumber(amount).toLocaleString() })}</Text>
         </Flex>
         <Flex justifyContent="space-between">
           <Text>{t('Your position')}</Text>
@@ -153,12 +153,12 @@ const PlaceBidModal: React.FC<React.PropsWithChildren<PlaceBidModalProps>> = ({
           <Text>{t('Bid a multiple of 10')}</Text>
           <Flex>
             <LogoRoundIcon width="24px" height="24px" mr="4px" />
-            <Text bold>OVE</Text>
+            <Text bold>MN</Text>
           </Flex>
         </Flex>
         {isFirstBid && (
           <Text pb="8px" small>
-            {t('First bid must be %initialBidAmount% OVE or more.', { initialBidAmount })}
+            {t('First bid must be %initialBidAmount% MN or more.', { initialBidAmount })}
           </Text>
         )}
         <BalanceInput
@@ -250,7 +250,7 @@ const PlaceBidModal: React.FC<React.PropsWithChildren<PlaceBidModalProps>> = ({
           )}
         </Flex>
         <Text color="textSubtle" small mt="24px">
-          {t('If your bid is unsuccessful, you’ll be able to reclaim your OVE after the auction.')}
+          {t('If your bid is unsuccessful, you’ll be able to reclaim your MN after the auction.')}
         </Text>
       </InnerContent>
     </StyledModal>

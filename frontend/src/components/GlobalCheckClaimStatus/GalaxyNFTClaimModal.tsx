@@ -45,7 +45,7 @@ const GalaxyNFTClaimModal: React.FC<React.PropsWithChildren<InjectedModalProps &
         </Text>
         <Text textAlign="center" maxWidth="400px" mb="12px">
           {t(
-            'If you staked in our fixed-term staking pool for 52 weeks within the first 24 hours of the launch, you are eligible to claim a special edition “Project Galaxy x OvenSwap” NFT.',
+            'If you staked in our fixed-term staking pool for 52 weeks within the first 24 hours of the launch, you are eligible to claim a special edition “Project Galaxy x MetakeySwap” NFT.',
           )}
         </Text>
         <Text textAlign="center" maxWidth="400px" mb="12px">
@@ -58,7 +58,7 @@ const GalaxyNFTClaimModal: React.FC<React.PropsWithChildren<InjectedModalProps &
           mb="24px"
           scale="sm"
           as="a"
-          href="https://twitter.com/ovenswapprom"
+          href="https://twitter.com/metakeyswapprom"
           rel="noreferrer noopener"
           target="_blank"
         >

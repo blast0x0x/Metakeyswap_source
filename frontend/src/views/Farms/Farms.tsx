@@ -409,7 +409,7 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
                 external
                 color="failure"
                 fontSize={['16px', null, '20px']}
-                href="https://v1-farms.ovenswap.online/farms/history"
+                href="https://v1-farms.metakeyswap.com/farms/history"
               >
                 {t('check out v1 farms')}.
               </FinishedTextLink>

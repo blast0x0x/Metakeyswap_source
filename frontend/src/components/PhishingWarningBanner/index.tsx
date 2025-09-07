@@ -45,8 +45,8 @@ const PhishingWarningBanner: React.FC<React.PropsWithChildren> = () => {
   const [, hideBanner] = usePhishingBannerManager()
   const { isMobile, isMd } = useMatchBreakpointsContext()
   const warningTextAsParts = useMemo(() => {
-    const warningText = t("please make sure you're visiting https://ovenswap.online - check the URL carefully.")
-    return warningText.split(/(https:\/\/ovenswap.online)/g)
+    const warningText = t("please make sure you're visiting https://metakeyswap.com - check the URL carefully.")
+    return warningText.split(/(https:\/\/metakeyswap.com)/g)
   }, [t])
   const warningTextComponent = (
     <>
@@ -59,8 +59,8 @@ const PhishingWarningBanner: React.FC<React.PropsWithChildren> = () => {
           key={i}
           small
           as="span"
-          bold={text === 'https://ovenswap.online'}
-          color={text === 'https://ovenswap.online' ? '#FFFFFF' : '#BDC2C4'}
+          bold={text === 'https://metakeyswap.com'}
+          color={text === 'https://metakeyswap.com' ? '#FFFFFF' : '#BDC2C4'}
         >
           {text}
         </Text>
