@@ -92,7 +92,7 @@ const RoiCalculatorModal: React.FC<React.PropsWithChildren<RoiCalculatorModalPro
   stakingTokenPrice,
   multiplier,
   initialValue,
-  earningTokenSymbol = 'MN',
+  earningTokenSymbol = 'MK',
   autoCompoundFrequency = 0,
   performanceFee = 0,
   isFarm = false,

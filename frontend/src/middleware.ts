@@ -27,7 +27,7 @@ export const config = {
     '/pool',
     '/pools',
     '/farms',
-    '/launch',
+    // '/launch',
     '/add',
     '/ifo',
     '/remove',
@@ -35,6 +35,6 @@ export const config = {
     '/find',
     '/limit-orders',
     '/lottery',
-    '/nfts',
+    // '/nfts',
   ],
 }

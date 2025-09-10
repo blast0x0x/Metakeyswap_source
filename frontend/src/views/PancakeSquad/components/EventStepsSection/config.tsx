@@ -50,8 +50,8 @@ const stepsConfigBuilder = ({ t, userInfos, eventInfos, userStatus, account, the
         hasProfileActivated,
         eventStatus: [SaleStatusEnum.Pending, SaleStatusEnum.Premint],
       }),
-      title: t('Hold MN'),
-      bodyText: [t('Each NFT costs MN to mint. Remember you also need BNB to cover transaction fees too!')],
+      title: t('Hold MK'),
+      bodyText: [t('Each NFT costs MK to mint. Remember you also need BNB to cover transaction fees too!')],
       buttons: (
         <>
           <Button
@@ -60,7 +60,7 @@ const stepsConfigBuilder = ({ t, userInfos, eventInfos, userStatus, account, the
             target="_blank"
             width="100%"
           >
-            {t('Buy MN')}
+            {t('Buy MK')}
           </Button>
         </>
       ),

@@ -20,7 +20,7 @@ export const vaultPoolConfig = {
     autoCompoundFrequency: 5000,
     gasLimit: 380000,
     tokenImage: {
-      primarySrc: `/images/tokens/${bscTokens.mn.address}.svg`,
+      primarySrc: `/images/tokens/${bscTokens.mk.address}.svg`,
       secondarySrc: '/images/tokens/autorenew.svg',
     },
   },
@@ -30,7 +30,7 @@ export const vaultPoolConfig = {
     autoCompoundFrequency: 5000,
     gasLimit: 500000,
     tokenImage: {
-      primarySrc: `/images/tokens/${bscTokens.mn.address}.svg`,
+      primarySrc: `/images/tokens/${bscTokens.mk.address}.svg`,
       secondarySrc: '/images/tokens/autorenew.svg',
     },
   },
@@ -40,7 +40,7 @@ export const vaultPoolConfig = {
     autoCompoundFrequency: 5000,
     gasLimit: 500000,
     tokenImage: {
-      primarySrc: `/images/tokens/${bscTokens.mn.address}.svg`,
+      primarySrc: `/images/tokens/${bscTokens.mk.address}.svg`,
       secondarySrc: '/images/tokens/autorenew.svg',
     },
   },
@@ -50,7 +50,7 @@ export const vaultPoolConfig = {
     autoCompoundFrequency: 1,
     gasLimit: 500000,
     tokenImage: {
-      primarySrc: `/images/tokens/${bscTokens.mn.address}.svg`,
+      primarySrc: `/images/tokens/${bscTokens.mk.address}.svg`,
       secondarySrc: `/images/tokens/ifo-pool-icon.svg`,
     },
   },
@@ -59,11 +59,11 @@ export const vaultPoolConfig = {
 export const livePools: SerializedPoolConfig[] = [
   {
     sousId: 0,
-    stakingToken: serializedTokens.mn,
-    earningToken: serializedTokens.mn,
+    stakingToken: serializedTokens.mk,
+    earningToken: serializedTokens.mk,
     contractAddress: {
-      97: '0x1B87798F41b8c2e01Eb3666a8816CB79833334F2',
-      56: '0x1B87798F41b8c2e01Eb3666a8816CB79833334F2',
+      97: '0x0ae7cee78DDf3bCC48376a4836Db22bc0fA1c507',
+      56: '0x0ae7cee78DDf3bCC48376a4836Db22bc0fA1c507',
     },
     poolCategory: PoolCategory.CORE,
     tokenPerBlock: '10',
@@ -72,10 +72,10 @@ export const livePools: SerializedPoolConfig[] = [
   },
   // {
   //   sousId: 291,
-  //   stakingToken: serializedTokens.mn,
-  //   earningToken: serializedTokens.mn,
+  //   stakingToken: serializedTokens.mk,
+  //   earningToken: serializedTokens.mk,
   //   contractAddress: {
-  //     56: '0x1B87798F41b8c2e01Eb3666a8816CB79833334F2',
+  //     56: '0x0ae7cee78DDf3bCC48376a4836Db22bc0fA1c507',
   //     97: '',
   //   },
   //   poolCategory: PoolCategory.CORE,

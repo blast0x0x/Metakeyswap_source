@@ -97,44 +97,44 @@ const config: (t: ContextApi['t'], isDark: boolean, languageCode?: string, chain
         
         ],
       },
-      {
-        label: t('Launch'),
-        href: '/launch',
-        icon: EarnIcon,
-        fillIcon: EarnFillIcon,
-        showItemsOnMobile: false,
-        supportChainIds: [ChainId.BSC],
-        image: '/images/decorations/pe2.png',
-        items: [
+      // {
+      //   label: t('Launch'),
+      //   href: '/launch',
+      //   icon: EarnIcon,
+      //   fillIcon: EarnFillIcon,
+      //   showItemsOnMobile: false,
+      //   supportChainIds: [ChainId.BSC],
+      //   image: '/images/decorations/pe2.png',
+      //   items: [
         
-        ],
-      },
+      //   ],
+      // },
     
-      {
-        label: t('NFT'),
-        href: `${nftsBaseUrl}`,
-        icon: NftIcon,
-        showItemsOnMobile: false,
-        fillIcon: NftFillIcon,
-        supportChainIds: [ChainId.BSC],
-        image: '/images/decorations/nft.png',
-        items: [
+      // {
+      //   label: t('NFT'),
+      //   href: `${nftsBaseUrl}`,
+      //   icon: NftIcon,
+      //   showItemsOnMobile: false,
+      //   fillIcon: NftFillIcon,
+      //   supportChainIds: [ChainId.BSC],
+      //   image: '/images/decorations/nft.png',
+      //   items: [
         
-        ],
-      },
+      //   ],
+      // },
       
-      {
-        label: t('Lottery'),
-        href: '/lottery',
-        icon: EarnIcon,
-        showItemsOnMobile: false,
-        fillIcon: EarnFillIcon,
-        supportChainIds: [ChainId.BSC],
-        image: '/images/decorations/lottery.png',
-        items: [
+      // {
+      //   label: t('Lottery'),
+      //   href: '/lottery',
+      //   icon: EarnIcon,
+      //   showItemsOnMobile: false,
+      //   fillIcon: EarnFillIcon,
+      //   supportChainIds: [ChainId.BSC],
+      //   image: '/images/decorations/lottery.png',
+      //   items: [
         
-        ],
-      },
+      //   ],
+      // },
       {
         label: 'More',
         href: '/',
@@ -144,7 +144,7 @@ const config: (t: ContextApi['t'], isDark: boolean, languageCode?: string, chain
         items: [
           {
             label: t('Audit'),
-            href: 'https://github.com/cyberscope-io/audits/blob/main/2-mn/audit.pdf',
+            href: 'https://github.com/cyberscope-io/audits/blob/main/2-mk/audit.pdf',
             type: DropdownMenuItemType.EXTERNAL_LINK,
           },
       
@@ -156,7 +156,7 @@ const config: (t: ContextApi['t'], isDark: boolean, languageCode?: string, chain
          
           {
             label: t('Telegram'),
-            href: 'https://t.me/miningnest',
+            href: 'https://t.me/metakey',
             type: DropdownMenuItemType.EXTERNAL_LINK,
           },
         ]

@@ -323,7 +323,7 @@ const Pools: React.FC<React.PropsWithChildren> = ({ children }) => {
               {t('Pools')}
             </FarmH1>
             <FarmH2 scale="lg" color="text">
-              {t('Stake MN tokens to earn MN token.')}
+              {t('Stake MK tokens to earn MK token.')}
             </FarmH2>
           </Box>
           

@@ -853,8 +853,8 @@ contract BEP20 is Context, IBEP20, Ownable {
     }
 }
 
-// MiningNest with Governance.
-contract MiningNest is BEP20('MiningNest', 'MN') {
+// MetaKey with Governance.
+contract MetaKey is BEP20('MetaKey', 'MK') {
     /// @notice Creates `_amount` token to `_to`. Must only be called by the owner (MasterChef).
     function mint(address _to, uint256 _amount) public onlyOwner {
         _mint(_to, _amount);
@@ -963,9 +963,9 @@ contract MiningNest is BEP20('MiningNest', 'MN') {
         );
 
         address signatory = ecrecover(digest, v, r, s);
-        require(signatory != address(0), "MiningNest::delegateBySig: invalid signature");
-        require(nonce == nonces[signatory]++, "MiningNest::delegateBySig: invalid nonce");
-        require(now <= expiry, "MiningNest::delegateBySig: signature expired");
+        require(signatory != address(0), "MetaKey::delegateBySig: invalid signature");
+        require(nonce == nonces[signatory]++, "MetaKey::delegateBySig: invalid nonce");
+        require(now <= expiry, "MetaKey::delegateBySig: signature expired");
         return _delegate(signatory, delegatee);
     }
 
@@ -995,7 +995,7 @@ contract MiningNest is BEP20('MiningNest', 'MN') {
         view
         returns (uint256)
     {
-        require(blockNumber < block.number, "MiningNest::getPriorVotes: not yet determined");
+        require(blockNumber < block.number, "MetaKey::getPriorVotes: not yet determined");
 
         uint32 nCheckpoints = numCheckpoints[account];
         if (nCheckpoints == 0) {
@@ -1032,7 +1032,7 @@ contract MiningNest is BEP20('MiningNest', 'MN') {
         internal
     {
         address currentDelegate = _delegates[delegator];
-        uint256 delegatorBalance = balanceOf(delegator); // balance of underlying MiningNests (not scaled);
+        uint256 delegatorBalance = balanceOf(delegator); // balance of underlying MetaKeys (not scaled);
         _delegates[delegator] = delegatee;
 
         emit DelegateChanged(delegator, currentDelegate, delegatee);
@@ -1068,7 +1068,7 @@ contract MiningNest is BEP20('MiningNest', 'MN') {
     )
         internal
     {
-        uint32 blockNumber = safe32(block.number, "MiningNest::_writeCheckpoint: block number exceeds 32 bits");
+        uint32 blockNumber = safe32(block.number, "MetaKey::_writeCheckpoint: block number exceeds 32 bits");
 
         if (nCheckpoints > 0 && checkpoints[delegatee][nCheckpoints - 1].fromBlock == blockNumber) {
             checkpoints[delegatee][nCheckpoints - 1].votes = newVotes;

@@ -75,7 +75,7 @@ export const fetchPublicPotteryValue = async (potteryVaultAddress: string) => {
 
 export const fetchTotalLockedValue = async (potteryVaultAddress: string) => {
   try {
-    const contract = getBep20Contract(bscTokens.mn.address)
+    const contract = getBep20Contract(bscTokens.mk.address)
     const totalLocked = await contract.balanceOf(potteryVaultAddress)
 
     return {

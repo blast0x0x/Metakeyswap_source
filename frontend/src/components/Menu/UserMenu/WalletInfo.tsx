@@ -68,7 +68,7 @@ const WalletInfo: React.FC<WalletInfoProps> = ({ hasLowNativeBalance, onDismiss 
         <Flex alignItems="center">
           {!isBSC && <Image width={24} height={24} src="/images/chains/56.png" unoptimized />}
           <Text ml={isBSC ? 0 : '8px'} color="textSubtle">
-            {t('MN Balance')}
+            {t('MK Balance')}
           </Text>
         </Flex>
         {cakeFetchStatus !== FetchStatus.Fetched ? (

@@ -56,8 +56,8 @@ export const cakeSectionData = (t: TranslateFunction): SalesSectionProps => ({
   ),
   reverse: false,
   primaryButton: {
-    to: '/swap?outputCurrency=0x0d5556E58862A21db65B4Aa180da231cfE6140fE&chainId=56',
-    text: t('Buy MN'),
+    to: '/swap?outputCurrency=0xCDAf21b8d0f7c17010626c18C81663f6c38D724c&chainId=56',
+    text: t('Buy MK'),
     external: false,
   },
   secondaryButton: {
@@ -71,7 +71,7 @@ export const cakeSectionData = (t: TranslateFunction): SalesSectionProps => ({
     attributes: [
       { src: 'bottom-right', alt: t('Small 3d pancake') },
       { src: 'top-right', alt: t('Small 3d pancake') },
-      { src: 'coin', alt: t('MN token') },
+      { src: 'coin', alt: t('MK token') },
       { src: 'top-left', alt: t('Small 3d pancake') },
     ],
   },

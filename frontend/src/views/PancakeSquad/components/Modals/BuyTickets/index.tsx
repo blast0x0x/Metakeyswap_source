@@ -97,14 +97,14 @@ const BuyTicketsModal: React.FC<React.PropsWithChildren<BuyTicketsModalProps>> =
               <Text font-size="14px" color="textSubtle">
                 {t('Cost per Ticket')}
               </Text>
-              <Text font-size="14px">{formatBigNumber(pricePerTicket, 0)} MN</Text>
+              <Text font-size="14px">{formatBigNumber(pricePerTicket, 0)} MK</Text>
             </Flex>
             <Flex mb="8px" justifyContent="space-between">
               <Text font-size="14px" color="textSubtle">
-                {t('Your MN Balance')}
+                {t('Your MK Balance')}
               </Text>
               <Text font-size="14px" color={isCakeBalanceInsufficient ? 'failure' : 'text'}>
-                {formatBigNumber(cakeBalance, 3)} MN
+                {formatBigNumber(cakeBalance, 3)} MK
               </Text>
             </Flex>
             <Flex

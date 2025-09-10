@@ -93,11 +93,11 @@ const Launch: React.FC = () => {
                       {t('PreSale')}                              
                     </Heading>
                     {/*
-                    <KycExternalLink href="https://github.com/cyberscope-io/audits/blob/main/2-mn/audit.pdf">
+                    <KycExternalLink href="https://github.com/cyberscope-io/audits/blob/main/2-mk/audit.pdf">
                       {t('KYC')}
                     </KycExternalLink>
                     */}
-                    <AuditExternalLink href="https://github.com/cyberscope-io/audits/blob/main/2-mn/audit.pdf">
+                    <AuditExternalLink href="https://github.com/cyberscope-io/audits/blob/main/2-mk/audit.pdf">
                       {t('AUDIT')}
                     </AuditExternalLink>                    
                   </Flex>                    

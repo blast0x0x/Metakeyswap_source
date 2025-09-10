@@ -88,9 +88,9 @@ const CakeDataRow = () => {
   } = useSWR(
     loadData ? ['cakeDataRow'] : null,
     async () => {
-      const totalSupplyCall = { address: bscTokens.mn.address, name: 'totalSupply' }
+      const totalSupplyCall = { address: bscTokens.mk.address, name: 'totalSupply' }
       const burnedTokenCall = {
-        address: bscTokens.mn.address,
+        address: bscTokens.mk.address,
         name: 'balanceOf',
         params: ['0x000000000000000000000000000000000000dEaD'],
       }

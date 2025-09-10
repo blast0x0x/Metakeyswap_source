@@ -108,8 +108,8 @@ library SafeMath {
 contract MetakeySwapERC20 is IMetakeySwapERC20 {
     using SafeMath for uint;
 
-    string public constant name = 'MN LPs';
-    string public constant symbol = 'MN-LP';
+    string public constant name = 'MK LPs';
+    string public constant symbol = 'MK-LP';
     uint8 public constant decimals = 18;
     uint  public totalSupply;
     mapping(address => uint) public balanceOf;

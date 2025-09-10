@@ -225,7 +225,7 @@ const HowToPlay: React.FC<React.PropsWithChildren> = () => {
     {
       label: t('Step %number%', { number: 1 }),
       title: t('Buy Tickets'),
-      subtitle: t('Prices are set when the round starts, equal to 5 USD in MN per ticket.'),
+      subtitle: t('Prices are set when the round starts, equal to 5 USD in MK per ticket.'),
     },
     {
       label: t('Step %number%', { number: 2 }),
@@ -307,7 +307,7 @@ const HowToPlay: React.FC<React.PropsWithChildren> = () => {
           <BulletList>
             <li>
               <Text display="inline" color="textSubtle">
-                {t('100% of the MN paid by people buying tickets that round goes back into the prize pools.')}
+                {t('100% of the MK paid by people buying tickets that round goes back into the prize pools.')}
               </Text>
             </li>
           </BulletList>
@@ -318,22 +318,22 @@ const HowToPlay: React.FC<React.PropsWithChildren> = () => {
             <li>
               <Text display="inline" color="textSubtle">
                 {t(
-                  'After every round, if nobody wins in one of the prize brackets, the unclaimed MN for that bracket rolls over into the next round and are redistributed among the prize pools.',
+                  'After every round, if nobody wins in one of the prize brackets, the unclaimed MK for that bracket rolls over into the next round and are redistributed among the prize pools.',
                 )}
               </Text>
             </li>
           </BulletList>
           <Heading my="16px" scale="md">
-            {t('MN Injections')}
+            {t('MK Injections')}
           </Heading>
           <BulletList>
             <li>
               <Text display="inline" color="textSubtle">
                 {t(
-                  'An average total of 35,000 MN from the treasury is added to lottery rounds over the course of a week. This MN is of course also included in rollovers! Read more in our guide to ',
+                  'An average total of 35,000 MK from the treasury is added to lottery rounds over the course of a week. This MK is of course also included in rollovers! Read more in our guide to ',
                 )}
                 <InlineLink href="https://docs.metakeyswap.com/tokenomics/cake/cake-tokenomics">
-                  {t('MN Tokenomics')}
+                  {t('MK Tokenomics')}
                 </InlineLink>
               </Text>
             </li>

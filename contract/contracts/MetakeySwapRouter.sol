@@ -284,7 +284,7 @@ library MetakeySwapLibrary {
                 factory,
                 keccak256(abi.encodePacked(token0, token1)),
                 //hex'd0d4c4cd0848c93cb4fd1f498d7013ee6bfb25783ea21593d5834f5d250ece66' // init code hash
-                hex'662608e50991eb84df312ef6c734d95af1be966dcd7bf8659df5323391784df3'   // Change to INIT_CODE_PAIR_HASH of MetakeySwap Factory
+                hex'97868f10d89aa0123789cb1ee9f7d1cb2f5ca185d2f753542b3c71656e7b2747'   // Change to INIT_CODE_PAIR_HASH of MetakeySwap Factory
             ))));
     }
 

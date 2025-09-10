@@ -311,7 +311,6 @@ const PresaleCard: React.FC<PresaleCardProps> = ({launch}) => {
         </Flex>
         <Flex alignItems="center" justifyContent="space-between">
           <Text fontSize="20px">{t('Token Address')}</Text>
-          {/* <ExternalLink href="https://bscscan.com/address/0x9aB728c58CD9F1185F84AB29034482643bE8574c">{truncateHash('0x9aB728c58CD9F1185F84AB29034482643bE8574c')}</ExternalLink> */}
           <ExternalLink href={getBscScanLink(getAddress(address), 'address')}>{truncateHash(getAddress(address))}</ExternalLink>
         </Flex>
         <Flex alignItems="center" justifyContent="space-between">
@@ -326,9 +325,9 @@ const PresaleCard: React.FC<PresaleCardProps> = ({launch}) => {
           <StyledBoxIntro>
             <p>{t('Dear Valued User,')}</p>
             <br/>
-            <p>{t('Greetings from the Metakeyswap team. Under the Panama-based OVEN Foundation, miningnest INC operates.')}</p>
+            <p>{t('Greetings from the Metakeyswap team. Under the Panama-based OVEN Foundation, metakey INC operates.')}</p>
             <br/>
-            <p>{t('First and foremost, we would like to extend our deepest gratitude for your participation in the pre-sale. The much-anticipated moment for the MN distribution is drawing near.')}</p>
+            <p>{t('First and foremost, we would like to extend our deepest gratitude for your participation in the pre-sale. The much-anticipated moment for the MK distribution is drawing near.')}</p>
             <br/>
             <p>{t('For those who have registered, a special offer is being prepared. Please follow the steps below to get ready for the distribution:')}</p>
             <br/>
@@ -338,9 +337,9 @@ const PresaleCard: React.FC<PresaleCardProps> = ({launch}) => {
             <p>{t('Wallet Configuration')}</p>
             <br/>
             <p>{t('Set to the BSC chain')}</p>
-            <p>{t('Confirm the MN token setting')}</p>
+            <p>{t('Confirm the MK token setting')}</p>
             <p>{t('Set to the BSC chain')}</p>
-            <p>{t('Once these steps are completed, you are all set to receive your MN.')}</p>
+            <p>{t('Once these steps are completed, you are all set to receive your MK.')}</p>
             <br/>
             <p>{t('Next, please reply to this email with the following details:')}</p>
             <br/>
@@ -350,13 +349,13 @@ const PresaleCard: React.FC<PresaleCardProps> = ({launch}) => {
             <p>{t('Registered Email Address')}</p>
             <p>{t('Metamask BSC Chain Wallet Address')}</p>
             <br/>
-            <p>{t('Upon verification, we will commence the MN distribution process. We plan to start with an initial distribution of 10% of the total amount, followed by subsequent distributions at predetermined percentages. Please look forward to the arrival of your MN.')}</p>
+            <p>{t('Upon verification, we will commence the MK distribution process. We plan to start with an initial distribution of 10% of the total amount, followed by subsequent distributions at predetermined percentages. Please look forward to the arrival of your MK.')}</p>
             <br/>
             <p>{t('Lastly, we kindly request you to ensure that you carefully follow and complete the steps below:')}</p>
             <br/>
             <p>{t('Wallet Creation')}</p>
             <p>{t('Configuration to the BSC Chain')}</p>
-            <p>{t('MN Token Configuration')}</p>
+            <p>{t('MK Token Configuration')}</p>
             <p>{t('Once again, please reply to this email with the aforementioned details.')}</p>
             <br/>
             <p>{t('info@ovendao.fi')}</p>
@@ -405,17 +404,17 @@ const PresaleCard: React.FC<PresaleCardProps> = ({launch}) => {
           </Flex>
           <Flex alignItems="center" justifyContent="space-between" mt="10px">
             <Text fontSize="20px">{t('Token Amount')}</Text>
-            {/* <Text fontSize="20px">{t(`${contribution ? getBalanceNumber(new BigNumber((contribution * launch.price).toString())) : 0} MN`)}</Text> */}
-            <Text fontSize="20px">{t(`${(contribution * launch.price).toString()} MN`)}</Text>
+            {/* <Text fontSize="20px">{t(`${contribution ? getBalanceNumber(new BigNumber((contribution * launch.price).toString())) : 0} MK`)}</Text> */}
+            <Text fontSize="20px">{t(`${(contribution * launch.price).toString()} MK`)}</Text>
           </Flex>
           <Flex alignItems="center" justifyContent="space-between" mt="10px">
             <Text fontSize="20px">{t('Earning By Referral')}</Text>
-            {/* <Text fontSize="20px">{t(`${referralBonus ? getBalanceNumber(new BigNumber((referralBonus * launch.price).toString())) : 0} MN`)}</Text> */}
-            <Text fontSize="20px">{t(`${(referralBonus * launch.price).toString()} MN`)}</Text>
+            {/* <Text fontSize="20px">{t(`${referralBonus ? getBalanceNumber(new BigNumber((referralBonus * launch.price).toString())) : 0} MK`)}</Text> */}
+            <Text fontSize="20px">{t(`${(referralBonus * launch.price).toString()} MK`)}</Text>
           </Flex>
           <Flex alignItems="center" justifyContent="space-between" mt="10px">
             <Text fontSize="20px">{t('Total Claimable Tokens')}</Text>
-            <Text fontSize="20px">{t(`${((referralBonus + contribution) * launch.price).toString()} MN`)}</Text>
+            <Text fontSize="20px">{t(`${((referralBonus + contribution) * launch.price).toString()} MK`)}</Text>
           </Flex>
           <Flex flexDirection="column" mt="20px">
             <Text>{t("Referred By")}</Text>

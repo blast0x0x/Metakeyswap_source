@@ -954,7 +954,7 @@ contract BEP20 is Context, IBEP20, Ownable {
 
 pragma solidity ^0.6.0;
 
-interface MN {
+interface MK {
     function transfer(address recipient, uint256 amount) external returns (bool);
     function balanceOf(address account) external view returns (uint256);
     function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
@@ -972,10 +972,10 @@ contract MasterChef is Ownable {
         // We do some fancy math here. Basically, any point in time, the amount of OVEs
         // entitled to a user but is pending to be distributed is:
         //
-        //   pending reward = (user.amount * pool.accMNPerShare) - user.rewardDebt
+        //   pending reward = (user.amount * pool.accMKPerShare) - user.rewardDebt
         //
         // Whenever a user deposits or withdraws LP tokens to a pool. Here's what happens:
-        //   1. The pool's `accMNPerShare` (and `lastRewardBlock`) gets updated.
+        //   1. The pool's `accMKPerShare` (and `lastRewardBlock`) gets updated.
         //   2. User receives the pending reward sent to his/her address.
         //   3. User's `amount` gets updated.
         //   4. User's `rewardDebt` gets updated.
@@ -986,19 +986,19 @@ contract MasterChef is Ownable {
         IBEP20 lpToken;           // Address of LP token contract.
         uint256 allocPoint;       // How many allocation points assigned to this pool. OVEs to distribute per block.
         uint256 lastRewardBlock;  // Last block number that OVEs distribution occurs.
-        uint256 accMNPerShare; // Accumulated OVEs per share, times 1e12. See below.
+        uint256 accMKPerShare; // Accumulated OVEs per share, times 1e12. See below.
         uint16 depositFeeBP;      // Deposit fee in basis points
     }
 
     // The OVE TOKEN!
-    MN public mn;
+    MK public mk;
     
     // Fee address.
     address public feeAddr;
 
     // OVE tokens created per block.
-    uint256 public mnPerBlock;
-    // Bonus muliplier for early mn makers.
+    uint256 public mkPerBlock;
+    // Bonus muliplier for early mk makers.
     uint256 public BONUS_MULTIPLIER = 1;
 
     // Info of each pool.
@@ -1017,15 +1017,15 @@ contract MasterChef is Ownable {
     event UpdateStartBlock(uint256 newStartBlock);
 
     constructor(
-        MN _mn,
+        MK _mk,
         address _feeAddr,
-        uint256 _mnPerBlock,
+        uint256 _mkPerBlock,
         uint256 _startBlock
     ) public {
 
-        mn = _mn;
+        mk = _mk;
         feeAddr = _feeAddr;
-        mnPerBlock = _mnPerBlock;
+        mkPerBlock = _mkPerBlock;
         startBlock = _startBlock;
 
         // staking pool
@@ -1033,7 +1033,7 @@ contract MasterChef is Ownable {
             lpToken: IBEP20(0xd9650144Cd028fc70270a26C1D878E5dbeF8CE9A),
             allocPoint: 1000,
             lastRewardBlock: startBlock,
-            accMNPerShare: 0,
+            accMKPerShare: 0,
             depositFeeBP: 0
         }));
 
@@ -1062,7 +1062,7 @@ contract MasterChef is Ownable {
             lpToken: _lpToken,
             allocPoint: _allocPoint,
             lastRewardBlock: lastRewardBlock,
-            accMNPerShare: 0,
+            accMKPerShare: 0,
             depositFeeBP: _depositFeeBP
         }));
         updateStakingPool();
@@ -1096,23 +1096,23 @@ contract MasterChef is Ownable {
         }
     }
 
-    // Return reward multiplier mnr the given _from to _to block.
+    // Return reward multiplier mkr the given _from to _to block.
     function getMultiplier(uint256 _from, uint256 _to) public view returns (uint256) {
         return _to.sub(_from).mul(BONUS_MULTIPLIER);
     }
 
     // View function to see pending OVEs on frontend.
-    function pendingMN(uint256 _pid, address _user) external view returns (uint256) {
+    function pendingMK(uint256 _pid, address _user) external view returns (uint256) {
         PoolInfo storage pool = poolInfo[_pid];
         UserInfo storage user = userInfo[_pid][_user];
-        uint256 accMNPerShare = pool.accMNPerShare;
+        uint256 accMKPerShare = pool.accMKPerShare;
         uint256 lpSupply = pool.lpToken.balanceOf(address(this));
         if (block.number > pool.lastRewardBlock && lpSupply != 0) {
             uint256 multiplier = getMultiplier(pool.lastRewardBlock, block.number);
-            uint256 mnReward = multiplier.mul(mnPerBlock).mul(pool.allocPoint).div(totalAllocPoint);
-            accMNPerShare = accMNPerShare.add(mnReward.mul(1e12).div(lpSupply));
+            uint256 mkReward = multiplier.mul(mkPerBlock).mul(pool.allocPoint).div(totalAllocPoint);
+            accMKPerShare = accMKPerShare.add(mkReward.mul(1e12).div(lpSupply));
         }
-        return user.amount.mul(accMNPerShare).div(1e12).sub(user.rewardDebt);
+        return user.amount.mul(accMKPerShare).div(1e12).sub(user.rewardDebt);
     }
 
     // Update reward variables for all pools. Be careful of gas spending!
@@ -1136,11 +1136,11 @@ contract MasterChef is Ownable {
             return;
         }
         uint256 multiplier = getMultiplier(pool.lastRewardBlock, block.number);
-        uint256 mnReward = multiplier.mul(mnPerBlock).mul(pool.allocPoint).div(totalAllocPoint);
+        uint256 mkReward = multiplier.mul(mkPerBlock).mul(pool.allocPoint).div(totalAllocPoint);
         
-        mn.transfer(feeAddr, mnReward.div(20));
+        mk.transfer(feeAddr, mkReward.div(20));
   
-        pool.accMNPerShare = pool.accMNPerShare.add(mnReward.mul(1e12).div(lpSupply));
+        pool.accMKPerShare = pool.accMKPerShare.add(mkReward.mul(1e12).div(lpSupply));
         pool.lastRewardBlock = block.number;
     }
 
@@ -1153,9 +1153,9 @@ contract MasterChef is Ownable {
         UserInfo storage user = userInfo[_pid][msg.sender];
         updatePool(_pid);
         if (user.amount > 0) {
-            uint256 pending = user.amount.mul(pool.accMNPerShare).div(1e12).sub(user.rewardDebt);
+            uint256 pending = user.amount.mul(pool.accMKPerShare).div(1e12).sub(user.rewardDebt);
             if(pending > 0) {
-                safeMNTransfer(msg.sender, pending);
+                safeMKTransfer(msg.sender, pending);
             }
         }
         if (_amount > 0) {
@@ -1177,7 +1177,7 @@ contract MasterChef is Ownable {
                 user.amount = user.amount.add(_amount);
             }
         }
-        user.rewardDebt = user.amount.mul(pool.accMNPerShare).div(1e12);
+        user.rewardDebt = user.amount.mul(pool.accMKPerShare).div(1e12);
         emit Deposit(msg.sender, _pid, _amount);
     }
 
@@ -1190,15 +1190,15 @@ contract MasterChef is Ownable {
         UserInfo storage user = userInfo[_pid][msg.sender];
         require(user.amount >= _amount, "withdraw: not good");
         updatePool(_pid);
-        uint256 pending = user.amount.mul(pool.accMNPerShare).div(1e12).sub(user.rewardDebt);
+        uint256 pending = user.amount.mul(pool.accMKPerShare).div(1e12).sub(user.rewardDebt);
         if(pending > 0) {
-            safeMNTransfer(msg.sender, pending);
+            safeMKTransfer(msg.sender, pending);
         }
         if(_amount > 0) {
             user.amount = user.amount.sub(_amount);
             pool.lpToken.safeTransfer(address(msg.sender), _amount);
         }
-        user.rewardDebt = user.amount.mul(pool.accMNPerShare).div(1e12);
+        user.rewardDebt = user.amount.mul(pool.accMKPerShare).div(1e12);
         emit Withdraw(msg.sender, _pid, _amount);
     }
 
@@ -1208,9 +1208,9 @@ contract MasterChef is Ownable {
         UserInfo storage user = userInfo[0][msg.sender];
         updatePool(0);
         if (user.amount > 0) {
-            uint256 pending = user.amount.mul(pool.accMNPerShare).div(1e12).sub(user.rewardDebt);
+            uint256 pending = user.amount.mul(pool.accMKPerShare).div(1e12).sub(user.rewardDebt);
             if(pending > 0) {
-                safeMNTransfer(msg.sender, pending);
+                safeMKTransfer(msg.sender, pending);
             }
         }
         if(_amount > 0) {
@@ -1231,7 +1231,7 @@ contract MasterChef is Ownable {
                 user.amount = user.amount.add(_amount);    
             }
         }
-        user.rewardDebt = user.amount.mul(pool.accMNPerShare).div(1e12);
+        user.rewardDebt = user.amount.mul(pool.accMKPerShare).div(1e12);
 
         emit Deposit(msg.sender, 0, _amount);
     }
@@ -1241,15 +1241,15 @@ contract MasterChef is Ownable {
         UserInfo storage user = userInfo[0][msg.sender];
         require(user.amount >= _amount, "withdraw: not good");
         updatePool(0);
-        uint256 pending = user.amount.mul(pool.accMNPerShare).div(1e12).sub(user.rewardDebt);
+        uint256 pending = user.amount.mul(pool.accMKPerShare).div(1e12).sub(user.rewardDebt);
         if(pending > 0) {
-            safeMNTransfer(msg.sender, pending);
+            safeMKTransfer(msg.sender, pending);
         }
         if(_amount > 0) {
             user.amount = user.amount.sub(_amount);
             pool.lpToken.safeTransfer(address(msg.sender), _amount);
         }
-        user.rewardDebt = user.amount.mul(pool.accMNPerShare).div(1e12);
+        user.rewardDebt = user.amount.mul(pool.accMKPerShare).div(1e12);
 
         emit Withdraw(msg.sender, 0, _amount);
     }
@@ -1264,23 +1264,23 @@ contract MasterChef is Ownable {
         user.rewardDebt = 0;
     }
 
-    // Safe mn transfer function, just in case if rounding error causes pool to not have enough OVEs.
-    function safeMNTransfer(address _to, uint256 _amount) internal {
-        uint256 mnBal = mn.balanceOf(address(this));
+    // Safe mk transfer function, just in case if rounding error causes pool to not have enough OVEs.
+    function safeMKTransfer(address _to, uint256 _amount) internal {
+        uint256 mkBal = mk.balanceOf(address(this));
         bool transferSuccess = false;
-        if (_amount > mnBal) {
-            transferSuccess = mn.transfer(_to, mnBal);
+        if (_amount > mkBal) {
+            transferSuccess = mk.transfer(_to, mkBal);
         } else {
-            transferSuccess = mn.transfer(_to, _amount);
+            transferSuccess = mk.transfer(_to, _amount);
         }
         require(transferSuccess, "safeCollarTransfer: transfer failed");
     }
 
-    function updateEmissionRate(uint256 _mnPerBlock) public onlyOwner {
+    function updateEmissionRate(uint256 _mkPerBlock) public onlyOwner {
         
         massUpdatePools();
-        emit EmissionRateUpdated(msg.sender, mnPerBlock, _mnPerBlock);
-        mnPerBlock = _mnPerBlock;
+        emit EmissionRateUpdated(msg.sender, mkPerBlock, _mkPerBlock);
+        mkPerBlock = _mkPerBlock;
     }
 
     function setFeeAddress(address _feeAddr) public {

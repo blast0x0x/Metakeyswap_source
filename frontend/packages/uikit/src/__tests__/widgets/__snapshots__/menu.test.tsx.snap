@@ -1912,7 +1912,7 @@ exports[`renders correctly 1`] = `
           >
             <a
               class="c27"
-              href="https://ovenswap.online/swap?outputCurrency=0x0d5556E58862A21db65B4Aa180da231cfE6140fE"
+              href="https://ovenswap.online/swap?outputCurrency=0xCDAf21b8d0f7c17010626c18C81663f6c38D724c"
               target="_blank"
             >
               <svg

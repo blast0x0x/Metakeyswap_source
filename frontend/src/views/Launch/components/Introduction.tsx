@@ -45,11 +45,11 @@ const Introduction: React.FC = () => {
           
           <Heading mb="10px">{t('After SoftCap is reached')}:</Heading>
           <List>
-            <li>{t('200,000,000,000 MN will be distributed to wallets who joined the presale.')}</li>
+            <li>{t('200,000,000,000 MK will be distributed to wallets who joined the presale.')}</li>
           </List>
           <Heading mb="10px">{t('After HardCap is reached')}:</Heading>
           <List>
-            <li>{t('300,000,000,000 MN will be distributed to wallets who joined the presale.')}</li>
+            <li>{t('300,000,000,000 MK will be distributed to wallets who joined the presale.')}</li>
           </List>
         
         </div>

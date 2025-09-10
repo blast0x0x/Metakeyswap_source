@@ -2,9 +2,9 @@ import { ChainId, Token, WBNB } from '@pancakeswap/sdk'
 
 const CAKE_MAINNET = new Token(
   ChainId.BSC,
-  '0x0d5556E58862A21db65B4Aa180da231cfE6140fE',
+  '0xCDAf21b8d0f7c17010626c18C81663f6c38D724c',
   18,
-  'MN',
+  'MK',
   'MetakeySwap Token',
   'https://metakeyswap.com/',
 )
@@ -84,7 +84,7 @@ export const CAKE = {
   [ChainId.BSC_TESTNET]: CAKE_TESTNET,
 }
 
-export const MN = {
+export const MK = {
   [ChainId.BSC]: CAKE_MAINNET,
   [ChainId.BSC_TESTNET]: CAKE_TESTNET,
 }
@@ -153,11 +153,11 @@ export const bscTokens = {
     'BNB',
     'https://www.binance.com/',
   ),
-  mn: new Token(
+  mk: new Token(
     ChainId.BSC,
-    '0x0d5556E58862A21db65B4Aa180da231cfE6140fE',
+    '0xCDAf21b8d0f7c17010626c18C81663f6c38D724c',
     18,
-    'MN',
+    'MK',
     'MetakeySwap Finance',
     'https://metakeyswap.com',
   ),
