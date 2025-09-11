@@ -1,7 +1,7 @@
 {
   "short_name": "MetakeySwap",
   "name": "MetakeySwap",
-  "description": "Farm OVE with Pancake LP Tokens",
+  "description": "Farm MK with Metakey LP Tokens",
   "homepage_url": "https://metakeyswap.com",
   "start_url": ".",
   "display": "standalone",
