@@ -15,13 +15,7 @@ export const socials = [
   {
     label: "Telegram",
     icon: TelegramIcon,
-    items: [
-      {
-        label: "English",
-        href: "https://t.me/MetaKeySwapDEX",
-      },
-      
-    ],
+    href: "https://t.me/MetaKeySwapDEX",
   },
   
 ];
