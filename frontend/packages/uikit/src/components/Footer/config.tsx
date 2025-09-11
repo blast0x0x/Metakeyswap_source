@@ -10,7 +10,7 @@ export const socials = [
   {
     label: "Twitter",
     icon: TwitterIcon,
-    href: "https://twitter.com/ovenswapprom",
+    href: "https://x.com/MetaKeySwap",
   },
   {
     label: "Telegram",
@@ -18,7 +18,7 @@ export const socials = [
     items: [
       {
         label: "English",
-        href: "https://t.me/ovencoin",
+        href: "https://t.me/MetaKeySwapDEX",
       },
       
     ],

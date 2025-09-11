@@ -325,7 +325,7 @@ const PresaleCard: React.FC<PresaleCardProps> = ({launch}) => {
           <StyledBoxIntro>
             <p>{t('Dear Valued User,')}</p>
             <br/>
-            <p>{t('Greetings from the Metakeyswap team. Under the Panama-based OVEN Foundation, metakey INC operates.')}</p>
+            <p>{t('Greetings from the Metakeyswap team. Under the Panama-based METAKEY Foundation, metakey INC operates.')}</p>
             <br/>
             <p>{t('First and foremost, we would like to extend our deepest gratitude for your participation in the pre-sale. The much-anticipated moment for the MK distribution is drawing near.')}</p>
             <br/>
@@ -358,7 +358,7 @@ const PresaleCard: React.FC<PresaleCardProps> = ({launch}) => {
             <p>{t('MK Token Configuration')}</p>
             <p>{t('Once again, please reply to this email with the aforementioned details.')}</p>
             <br/>
-            <p>{t('info@ovendao.fi')}</p>
+            <p>{t('info@metakeydao.fi')}</p>
             <br/>
             <p>{t('We eagerly await your response.')}</p>
             <br/>
