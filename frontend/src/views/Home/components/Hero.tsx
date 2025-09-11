@@ -109,7 +109,8 @@ const Hero = () => {
       >
         <Flex flex="1" flexDirection="column">
           <Heading scale="xxl" color="secondary" mb="24px">
-            {t('Up to 100x Leverage.')}
+            {/* {t('Up to 100x Leverage.')} */}
+            {t('CryptoCurrency DEX')}
           </Heading>
           <Heading scale="md" mb="24px">
             {t('Trade, Earn & Win in Crypto on the newest & Most Popular Decentralized Platform.')}

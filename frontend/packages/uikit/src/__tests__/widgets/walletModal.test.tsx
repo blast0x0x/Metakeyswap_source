@@ -702,7 +702,7 @@ it("renders ConnectModal correctly", () => {
             </p>
             <a
               class="c22"
-              href="https://docs.ovenswap.online/get-started/connection-guide"
+              href="https://docs.metakeyswap.com/get-started/connection-guide"
               rel="noreferrer noopener"
               scale="md"
               target="_blank"

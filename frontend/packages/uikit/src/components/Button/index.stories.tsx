@@ -72,7 +72,7 @@ export const Anchors: React.FC<React.PropsWithChildren> = () => {
                 return (
                   <Button
                     as="a"
-                    href="https://ovenswap.online"
+                    href="https://metakeyswap.com"
                     key={scale}
                     variant={variant}
                     scale={scale}
@@ -88,10 +88,10 @@ export const Anchors: React.FC<React.PropsWithChildren> = () => {
         })}
       </Box>
       <Box>
-        <Button as="a" href="https://ovenswap.online" mr="8px" external disabled>
+        <Button as="a" href="https://metakeyswap.com" mr="8px" external disabled>
           Disabled
         </Button>
-        <Button as="a" href="https://ovenswap.online" variant="secondary" external disabled>
+        <Button as="a" href="https://metakeyswap.com" variant="secondary" external disabled>
           Disabled
         </Button>
       </Box>

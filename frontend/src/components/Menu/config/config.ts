@@ -142,21 +142,21 @@ const config: (t: ContextApi['t'], isDark: boolean, languageCode?: string, chain
         showItemsOnMobile: false,
         hideSubNav: true,
         items: [
-          {
-            label: t('Audit'),
-            href: 'https://github.com/cyberscope-io/audits/blob/main/2-mk/audit.pdf',
-            type: DropdownMenuItemType.EXTERNAL_LINK,
-          },
+          // {
+          //   label: t('Audit'),
+          //   href: 'https://github.com/cyberscope-io/audits/blob/main/2-mk/audit.pdf',
+          //   type: DropdownMenuItemType.EXTERNAL_LINK,
+          // },
       
           {
             label: t('Twitter'),
-            href: 'https://twitter.com/metakeyswapprom',
+            href: 'https://x.com/MetaKeySwap',
             type: DropdownMenuItemType.EXTERNAL_LINK,
           },
          
           {
             label: t('Telegram'),
-            href: 'https://t.me/metakey',
+            href: 'https://t.me/MetaKeySwapDEX',
             type: DropdownMenuItemType.EXTERNAL_LINK,
           },
         ]
