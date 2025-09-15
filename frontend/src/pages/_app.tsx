@@ -79,6 +79,18 @@ function MyApp(props: AppProps) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="MetakeySwap - A next evolution DeFi exchange on BNB Smart Chain (BSC)" />
         <title>MetakeySwap</title>
+        {/* Google tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4H8301GN42"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-4H8301GN42');
+            `,
+          }}
+        />
         {(Component as NextPageWithLayout).mp && (
           // eslint-disable-next-line @next/next/no-sync-scripts
           <script src="https://public.bnbstatic.com/static/js/mp-webview-sdk/webview-v1.0.0.min.js" id="mp-webview" />
