@@ -67,6 +67,14 @@
       "logoURI": "https://metakeyswap.com/images/tokens/0xCDAf21b8d0f7c17010626c18C81663f6c38D724c.png"
     },
     {
+      "name": "USDR",
+      "symbol": "USDR",
+      "address": "0x249155D6F660fB1bc2d2820391418dD9c8d2A198",
+      "chainId": 56,
+      "decimals": 9,
+      "logoURI": "https://metakeyswap.com/images/tokens/0x249155D6F660fB1bc2d2820391418dD9c8d2A198.png"
+    },
+    {
       "name": "Venus",
       "symbol": "XVS",
       "address": "0xcF6BB5389c92Bdda8a3747Ddb454cB7a64626C63",

@@ -71,7 +71,51 @@ const farms: SerializedFarmConfig[] = [
     token: serializedTokens.mk,
     quoteToken: serializedTokens.usdt,
   },
-  
+  {
+    pid: 4,
+    v1pid: 4,
+    lpSymbol: 'USDR-MK LP',
+    lpAddresses: {
+      97: '0x290AA189F556D4cf03d80640F0D1D174A29856Ff',
+      56: '0x290AA189F556D4cf03d80640F0D1D174A29856Ff',
+    },
+    AprlpAddresses: {
+      97: '0x290AA189F556D4cf03d80640F0D1D174A29856Ff',
+      56: '0x290AA189F556D4cf03d80640F0D1D174A29856Ff',
+    },
+    token: serializedTokens.usdr,
+    quoteToken: serializedTokens.mk,
+  },
+  {
+    pid: 5,
+    v1pid: 5,
+    lpSymbol: 'USDR-BNB LP',
+    lpAddresses: {
+      97: '0x14DE25325C518d465592266cF7D5041C6BD5CAB3',
+      56: '0x14DE25325C518d465592266cF7D5041C6BD5CAB3',
+    },
+    AprlpAddresses: {
+      97: '0x14DE25325C518d465592266cF7D5041C6BD5CAB3',
+      56: '0x14DE25325C518d465592266cF7D5041C6BD5CAB3',
+    },
+    token: serializedTokens.usdr,
+    quoteToken: serializedTokens.wbnb,
+  },
+  {
+    pid: 6,
+    v1pid: 6,
+    lpSymbol: 'USDR-USDT LP',
+    lpAddresses: {
+      97: '0xe7213e122e274e5ea5f457f101b1584543504b27',
+      56: '0xe7213e122e274e5ea5f457f101b1584543504b27',
+    },
+    AprlpAddresses: {
+      97: '0xe7213e122e274e5ea5f457f101b1584543504b27',
+      56: '0xe7213e122e274e5ea5f457f101b1584543504b27',
+    },
+    token: serializedTokens.usdr,
+    quoteToken: serializedTokens.usdt,
+  },  
 ]
 
 export default farms
