@@ -35,7 +35,7 @@ const CakePrice: React.FC<React.PropsWithChildren<Props>> = ({
       target="_blank"
     >
       <LogoRound width="24px" mr="8px" />
-      <Text color={color} bold>{`$${cakePriceUsd.toFixed(5)}`}</Text>
+      <Text color={color} bold>{`$${cakePriceUsd.toFixed(12)}`}</Text>
     </PriceLink>
   ) : showSkeleton ? (
     <Skeleton width={80} height={24} />

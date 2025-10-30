@@ -156,7 +156,7 @@ const config: (t: ContextApi['t'], isDark: boolean, languageCode?: string, chain
          
           {
             label: t('Telegram'),
-            href: 'https://t.me/MetaKeySwapDEX',
+            href: 'https://t.me/metakeyswapgroup',
             type: DropdownMenuItemType.EXTERNAL_LINK,
           },
         ]
