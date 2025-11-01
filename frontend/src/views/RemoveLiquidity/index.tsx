@@ -175,7 +175,7 @@ export default function RemoveLiquidity() {
       { name: 'verifyingContract', type: 'address' },
     ]
     const domain = {
-      name: 'Pancake LPs',
+      name: 'MK LPs',
       version: '1',
       chainId,
       verifyingContract: pair.liquidityToken.address,
@@ -626,7 +626,7 @@ export default function RemoveLiquidity() {
                 <LightGreyCard>
                   <Flex justifyContent="space-between" mb="8px" as="label" alignItems="center">
                     <Flex alignItems="center">
-                      {zapModeStatus && (
+                      {/* {zapModeStatus && (
                         <Flex mr="9px">
                           <Checkbox
                             disabled={isZapOutA}
@@ -635,7 +635,7 @@ export default function RemoveLiquidity() {
                             onChange={(e) => setRemovalCheckedA(e.target.checked)}
                           />
                         </Flex>
-                      )}
+                      )} */}
                       <CurrencyLogo currency={currencyA} />
                       <Text small color="textSubtle" id="remove-liquidity-tokena-symbol" ml="4px">
                         {currencyA?.symbol}
@@ -652,7 +652,7 @@ export default function RemoveLiquidity() {
                   </Flex>
                   <Flex justifyContent="space-between" as="label" alignItems="center">
                     <Flex alignItems="center">
-                      {zapModeStatus && (
+                      {/* {zapModeStatus && (
                         <Flex mr="9px">
                           <Checkbox
                             disabled={isZapOutB}
@@ -661,7 +661,7 @@ export default function RemoveLiquidity() {
                             onChange={(e) => setRemovalCheckedB(e.target.checked)}
                           />
                         </Flex>
-                      )}
+                      )} */}
                       <CurrencyLogo currency={currencyB} />
                       <Text small color="textSubtle" id="remove-liquidity-tokenb-symbol" ml="4px">
                         {currencyB?.symbol}
