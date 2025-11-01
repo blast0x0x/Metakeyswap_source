@@ -149,14 +149,38 @@ const config: (t: ContextApi['t'], isDark: boolean, languageCode?: string, chain
           // },
       
           {
-            label: t('Twitter'),
+            label: t('Twitter(X)'),
             href: 'https://x.com/MetaKeySwap',
             type: DropdownMenuItemType.EXTERNAL_LINK,
           },
          
           {
-            label: t('Telegram'),
+            label: t('Telegram Channel'),
+            href: 'https://t.me/MetaKeySwapDEX',
+            type: DropdownMenuItemType.EXTERNAL_LINK,
+          },
+
+          {
+            label: t('Telegram Group'),
             href: 'https://t.me/metakeyswapgroup',
+            type: DropdownMenuItemType.EXTERNAL_LINK,
+          },
+
+          {
+            label: t('BSCScan'),
+            href: 'https://bscscan.com/token/0xCDAf21b8d0f7c17010626c18C81663f6c38D724c',
+            type: DropdownMenuItemType.EXTERNAL_LINK,
+          },
+
+          {
+            label: t('WhitePepar'),
+            href: 'https://drive.google.com/file/d/1fRCgnI3GejlFQa4BlXWObT5198WJztLe/view',
+            type: DropdownMenuItemType.EXTERNAL_LINK,
+          },
+
+          {
+            label: t('List token Farms'),
+            href: 'https://docs.google.com/forms/d/e/1FAIpQLSf409vpBq9SmIhg29gPp6sBFwe1ofcAdZ9uF7m-WW0B_3zKQA/viewform?usp=dialog',
             type: DropdownMenuItemType.EXTERNAL_LINK,
           },
         ]
