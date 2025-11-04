@@ -1,6 +1,6 @@
 import { Language } from "../LangSelector/types";
 import { FooterLinkType } from "./types";
-import { TwitterIcon, TelegramIcon, BscScanIcon, ListViewIcon, FarmIcon, RedditIcon, InstagramIcon, GithubIcon, DiscordIcon, MediumIcon } from "../Svg";
+import { TwitterIcon, TelegramIcon, BscScanIcon, ListViewIcon, FarmIcon, MailIcon, RedditIcon, InstagramIcon, GithubIcon, DiscordIcon, MediumIcon } from "../Svg";
 
 export const footerLinks: FooterLinkType[] = [
   
@@ -36,6 +36,11 @@ export const socials = [
     label: "List token Farms",
     icon: FarmIcon,
     href: "https://docs.google.com/forms/d/e/1FAIpQLSf409vpBq9SmIhg29gPp6sBFwe1ofcAdZ9uF7m-WW0B_3zKQA/viewform?usp=dialog",
+  },
+  {
+    label: "Mail",
+    icon: MailIcon,
+    href: "mailto:support@metakeyswap.com",
   },
   
 ];
