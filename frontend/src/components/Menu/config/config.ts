@@ -186,7 +186,7 @@ const config: (t: ContextApi['t'], isDark: boolean, languageCode?: string, chain
 
           {
             label: t('Mail'),
-            href: 'mailto:support@metakeyswap.com',
+            href: 'https://mail.google.com/mail/?view=cm&fs=1&to=support@metakeyswap.com',
             type: DropdownMenuItemType.EXTERNAL_LINK,
           }
         ]

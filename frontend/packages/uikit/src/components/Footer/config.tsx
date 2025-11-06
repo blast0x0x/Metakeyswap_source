@@ -38,9 +38,9 @@ export const socials = [
     href: "https://docs.google.com/forms/d/e/1FAIpQLSf409vpBq9SmIhg29gPp6sBFwe1ofcAdZ9uF7m-WW0B_3zKQA/viewform?usp=dialog",
   },
   {
-    label: "Mail",
+    label: "Contact Support",
     icon: MailIcon,
-    href: "mailto:support@metakeyswap.com",
+    href: "https://mail.google.com/mail/?view=cm&fs=1&to=support@metakeyswap.com",
   },
   
 ];
