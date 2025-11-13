@@ -35,7 +35,7 @@ const useAuth = () => {
             t('Provider Error'),
             <Box>
               <Text>{t('No provider was found')}</Text>
-              <LinkExternal href="https://docs.metakeyswap.com/get-started/connection-guide">
+              <LinkExternal href="https://support.metamask.io/more-web3/dapps/connecting-to-a-dapp">
                 {t('Need help ?')}
               </LinkExternal>
             </Box>,

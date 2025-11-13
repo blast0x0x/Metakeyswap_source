@@ -94,7 +94,7 @@ const ConnectModal: React.FC<React.PropsWithChildren<Props>> = ({
           </Text>
           <Button
             as="a"
-            href="https://docs.metakeyswap.com/get-started/connection-guide"
+            href="https://support.metamask.io/more-web3/dapps/connecting-to-a-dapp"
             variant="subtle"
             width="100%"
             {...EXTERNAL_LINK_PROPS}

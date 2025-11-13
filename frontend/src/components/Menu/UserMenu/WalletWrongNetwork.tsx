@@ -30,7 +30,7 @@ const WalletWrongNetwork: React.FC<React.PropsWithChildren<WalletWrongNetworkPro
       <Button onClick={handleSwitchNetwork} mb="24px">
         {t('Switch Network')}
       </Button>
-      <StyledLink href="https://docs.metakeyswap.com/get-started/connection-guide" external>
+      <StyledLink href="https://support.metamask.io/more-web3/dapps/connecting-to-a-dapp" external>
         <Button width="100%" variant="secondary">
           {t('Learn How')}
           <HelpIcon color="primary" ml="6px" />

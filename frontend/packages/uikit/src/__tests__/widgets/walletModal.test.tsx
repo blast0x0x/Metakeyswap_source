@@ -702,7 +702,7 @@ it("renders ConnectModal correctly", () => {
             </p>
             <a
               class="c22"
-              href="https://docs.metakeyswap.com/get-started/connection-guide"
+              href="https://support.metamask.io/more-web3/dapps/connecting-to-a-dapp"
               rel="noreferrer noopener"
               scale="md"
               target="_blank"
