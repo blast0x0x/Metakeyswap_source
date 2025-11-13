@@ -1030,7 +1030,7 @@ contract MasterChef is Ownable {
 
         // staking pool
         poolInfo.push(PoolInfo({
-            lpToken: IBEP20(0xd9650144Cd028fc70270a26C1D878E5dbeF8CE9A),
+            lpToken: IBEP20(0xCDAf21b8d0f7c17010626c18C81663f6c38D724c),
             allocPoint: 1000,
             lastRewardBlock: startBlock,
             accMKPerShare: 0,

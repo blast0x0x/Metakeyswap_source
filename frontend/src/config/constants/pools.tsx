@@ -62,8 +62,8 @@ export const livePools: SerializedPoolConfig[] = [
     stakingToken: serializedTokens.mk,
     earningToken: serializedTokens.mk,
     contractAddress: {
-      97: '0x0ae7cee78DDf3bCC48376a4836Db22bc0fA1c507',
-      56: '0x0ae7cee78DDf3bCC48376a4836Db22bc0fA1c507',
+      97: '0x20254c1d532541262C2E99f4D69c64B52677e887',
+      56: '0x20254c1d532541262C2E99f4D69c64B52677e887',
     },
     poolCategory: PoolCategory.CORE,
     tokenPerBlock: '10',
@@ -75,7 +75,7 @@ export const livePools: SerializedPoolConfig[] = [
   //   stakingToken: serializedTokens.mk,
   //   earningToken: serializedTokens.mk,
   //   contractAddress: {
-  //     56: '0x0ae7cee78DDf3bCC48376a4836Db22bc0fA1c507',
+  //     56: '0x20254c1d532541262C2E99f4D69c64B52677e887',
   //     97: '',
   //   },
   //   poolCategory: PoolCategory.CORE,

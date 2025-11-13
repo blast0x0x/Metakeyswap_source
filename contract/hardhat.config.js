@@ -199,7 +199,23 @@ module.exports = {
           apiURL: "https://explorer-api.shidoscan.com/verify/",
           browserURL: "https://shidoscan.com/",
         }
-      }
+      },
+      {
+        network: "bscTestnet",
+        chainId: 97,
+        urls: {
+          apiURL: "https://api.etherscan.io/v2/api?chainid=97",
+          browserURL: "https://testnet.bscscan.com/"
+        }
+      },
+      {
+        network: "bsc",
+        chainId: 56,
+        urls: {
+          apiURL: "https://api.etherscan.io/v2/api?chainid=56",
+          browserURL: "https://bscscan.com"
+        }
+      },
     ]
   },
   solidity: {
