@@ -3,7 +3,7 @@ import { Flex, Card, Grid, SellIcon, Text, useModal, Box, BinanceIcon, Skeleton,
 import { useTranslation } from '@pancakeswap/localization'
 import useTheme from 'hooks/useTheme'
 import { NftToken } from 'state/nftMarket/types'
-import { useBNBBusdPrice } from 'hooks/useBUSDPrice'
+import { useBNBUsdtPrice } from 'hooks/useUSDTPrice'
 import { formatNumber } from 'utils/formatBalance'
 import { multiplyPriceByAmount } from 'utils/prices'
 import useNftOwner from 'views/Nft/market/hooks/useNftOwner'
@@ -43,11 +43,11 @@ const OwnerCard: React.FC<React.PropsWithChildren<OwnerCardProps>> = ({
 }) => {
   const { t } = useTranslation()
   const { theme } = useTheme()
-  const bnbBusdPrice = useBNBBusdPrice()
+  const bnbUsdtPrice = useBNBUsdtPrice()
 
   const { owner, isLoadingOwner } = useNftOwner(nft, isOwnNft)
 
-  const priceInUsd = multiplyPriceByAmount(bnbBusdPrice, parseFloat(nft?.marketData?.currentAskPrice))
+  const priceInUsd = multiplyPriceByAmount(bnbUsdtPrice, parseFloat(nft?.marketData?.currentAskPrice))
 
   const [onPresentBuyModal] = useModal(<BuyModal nftToBuy={nft} />)
   const [onPresentAdjustPriceModal] = useModal(
@@ -87,7 +87,7 @@ const OwnerCard: React.FC<React.PropsWithChildren<OwnerCardProps>> = ({
                     <BinanceIcon width="24px" height="24px" mr="8px" />
                     <Text bold>{formatNumber(parseFloat(nft?.marketData?.currentAskPrice), 0, 5)}</Text>
                   </Flex>
-                  {bnbBusdPrice ? (
+                  {bnbUsdtPrice ? (
                     <Text fontSize="12px" color="textSubtle">
                       {`(~${formatNumber(priceInUsd, 2, 2)} USD)`}
                     </Text>

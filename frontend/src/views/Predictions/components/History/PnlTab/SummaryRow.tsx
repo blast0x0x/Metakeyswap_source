@@ -10,7 +10,7 @@ type SummaryType = 'won' | 'lost' | 'entered'
 interface SummaryRowProps {
   type: SummaryType
   summary: any
-  bnbBusdPrice: Price<Currency, Currency>
+  bnbUsdtPrice: Price<Currency, Currency>
 }
 
 const summaryTypeColors = {
@@ -25,7 +25,7 @@ const summaryTypeSigns = {
   entered: '',
 }
 
-const SummaryRow: React.FC<React.PropsWithChildren<SummaryRowProps>> = ({ type, summary, bnbBusdPrice }) => {
+const SummaryRow: React.FC<React.PropsWithChildren<SummaryRowProps>> = ({ type, summary, bnbUsdtPrice }) => {
   const { t } = useTranslation()
 
   const color = summaryTypeColors[type]
@@ -34,7 +34,7 @@ const SummaryRow: React.FC<React.PropsWithChildren<SummaryRowProps>> = ({ type, 
   const roundsInPercents = ((rounds * 100) / totalRounds).toFixed(2)
   const typeTranslationKey = type.charAt(0).toUpperCase() + type.slice(1)
   const displayAmount = type === 'won' ? summary[type].payout : amount
-  const amountInUsd = multiplyPriceByAmount(bnbBusdPrice, displayAmount)
+  const amountInUsd = multiplyPriceByAmount(bnbUsdtPrice, displayAmount)
   const { token } = useConfig()
   const roundsInPercentsDisplay = !Number.isNaN(parseFloat(roundsInPercents)) ? `${roundsInPercents}%` : '0%'
 

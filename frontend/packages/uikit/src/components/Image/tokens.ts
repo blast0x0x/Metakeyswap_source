@@ -605,15 +605,6 @@ const tokens = {
     decimals: 18,
     projectLink: "https://dusk.network/",
   },
-  busd: {
-    symbol: "BUSD",
-    address: {
-      56: "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
-      97: "",
-    },
-    decimals: 18,
-    projectLink: "https://www.paxos.com/busd/",
-  },
   eth: {
     symbol: "ETH",
     address: {

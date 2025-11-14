@@ -6,7 +6,7 @@ import { getRoundResult, Result } from 'state/predictions/helpers'
 import { REWARD_RATE } from 'state/predictions/config'
 import { getBlockExploreLink } from 'utils'
 import { multiplyPriceByAmount } from 'utils/prices'
-import useBUSDPrice from 'hooks/useBUSDPrice'
+import useUSDTPrice from 'hooks/useUSDTPrice'
 import { useGetCurrentEpoch } from 'state/predictions/hooks'
 import { Bet, BetPosition } from 'state/types'
 import { useConfig } from 'views/Predictions/context/ConfigProvider'
@@ -107,7 +107,7 @@ const PnlTab: React.FC<React.PropsWithChildren<PnlTabProps>> = ({ hasBetHistory,
   const { account } = useWeb3React()
   const currentEpoch = useGetCurrentEpoch()
   const { token } = useConfig()
-  const bnbBusdPrice = useBUSDPrice(token)
+  const bnbUsdtPrice = useUSDTPrice(token)
 
   const summary = getPnlSummary(bets, currentEpoch)
 
@@ -120,11 +120,11 @@ const PnlTab: React.FC<React.PropsWithChildren<PnlTabProps>> = ({ hasBetHistory,
   // Guard in case user has only lost rounds
   const hasBestRound = summary.won.bestRound.payout !== 0
 
-  const netResultInUsd = multiplyPriceByAmount(bnbBusdPrice, netResultAmount)
-  const avgBnbWonInUsd = multiplyPriceByAmount(bnbBusdPrice, avgBnbWonPerRound)
+  const netResultInUsd = multiplyPriceByAmount(bnbUsdtPrice, netResultAmount)
+  const avgBnbWonInUsd = multiplyPriceByAmount(bnbUsdtPrice, avgBnbWonPerRound)
   const avgBnbWonInUsdDisplay = !Number.isNaN(avgBnbWonInUsd) ? `~${avgBnbWonInUsd.toFixed(2)}` : '~$0.00'
-  const betRoundInUsd = multiplyPriceByAmount(bnbBusdPrice, summary.won.bestRound.payout)
-  const avgPositionEnteredInUsd = multiplyPriceByAmount(bnbBusdPrice, avgPositionEntered)
+  const betRoundInUsd = multiplyPriceByAmount(bnbUsdtPrice, summary.won.bestRound.payout)
+  const avgPositionEnteredInUsd = multiplyPriceByAmount(bnbUsdtPrice, avgPositionEntered)
   const avgPositionEnteredInUsdDisplay = !Number.isNaN(avgPositionEnteredInUsd)
     ? `~${avgPositionEnteredInUsd.toFixed(2)}`
     : '~$0.00'
@@ -186,9 +186,9 @@ const PnlTab: React.FC<React.PropsWithChildren<PnlTabProps>> = ({ hasBetHistory,
 
         <Divider />
 
-        <SummaryRow type="won" summary={summary} bnbBusdPrice={bnbBusdPrice} />
-        <SummaryRow type="lost" summary={summary} bnbBusdPrice={bnbBusdPrice} />
-        <SummaryRow type="entered" summary={summary} bnbBusdPrice={bnbBusdPrice} />
+        <SummaryRow type="won" summary={summary} bnbUsdtPrice={bnbUsdtPrice} />
+        <SummaryRow type="lost" summary={summary} bnbUsdtPrice={bnbUsdtPrice} />
+        <SummaryRow type="entered" summary={summary} bnbUsdtPrice={bnbUsdtPrice} />
 
         <Flex justifyContent="center" mt="24px">
           <Link href={`${getBlockExploreLink(account, 'address')}#internaltx`} mb="16px" external>

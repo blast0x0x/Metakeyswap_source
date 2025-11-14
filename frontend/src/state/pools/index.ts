@@ -62,12 +62,12 @@ export const fetchPoolsPublicDataAsync = createAsyncThunk<
       },
       {
         address: masterChefAddress,
-        name: 'ovePerBlock',
+        name: 'mkPerBlock',
         // params: [true],
       },
     ]
-    const [[poolLength], [ovePerBlockRaw]] = await multicall(masterchefABI, calls)
-    const regularCakePerBlock = getBalanceAmount(ethersToBigNumber(ovePerBlockRaw))
+    const [[poolLength], [mkPerBlockRaw]] = await multicall(masterchefABI, calls)
+    const regularCakePerBlock = getBalanceAmount(ethersToBigNumber(mkPerBlockRaw))
     const farmsCanFetch = farmsConfig.filter(
       (farmConfig) => pids.includes(farmConfig.pid) && poolLength.gt(farmConfig.pid),
     )

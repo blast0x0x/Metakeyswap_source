@@ -11,7 +11,7 @@ import { useRouter } from 'next/router'
 import { useCallback, useContext } from 'react'
 import { useAppDispatch } from 'state'
 import { fetchFarmUserDataAsync } from 'state/farms'
-import { useLpTokenPrice, usePriceCakeBusd } from 'state/farms/hooks'
+import { useLpTokenPrice, usePriceCakeUsdt } from 'state/farms/hooks'
 import styled from 'styled-components'
 import { getAddress } from 'utils/addressHelpers'
 import { TransactionResponse } from '@ethersproject/providers'
@@ -84,6 +84,8 @@ export const ProxyStakedContainer = ({ children, ...props }) => {
 
   const { allowance } = props.userData || {}
 
+  console.log("allowance = ", allowance);
+
   const isApproved = account && allowance && allowance.isGreaterThan(0)
 
   return children({
@@ -104,6 +106,8 @@ export const StakedContainer = ({ children, ...props }) => {
   const { onStake, onUnstake, onApprove, onDone } = useStakedActions(props.pid, lpContract)
 
   const { allowance } = props.userData || {}
+  
+  console.log("allowance = ", props);
 
   const isApproved = account && allowance && allowance.isGreaterThan(0)
 
@@ -147,7 +151,7 @@ const Staked: React.FunctionComponent<React.PropsWithChildren<StackedActionProps
 
   const router = useRouter()
   const lpPrice = useLpTokenPrice(lpSymbol)
-  const cakePrice = usePriceCakeBusd()
+  const cakePrice = usePriceCakeUsdt()
 
   const liquidityUrlPathParts = getLiquidityUrlPathParts({
     quoteTokenAddress: quoteToken.address,

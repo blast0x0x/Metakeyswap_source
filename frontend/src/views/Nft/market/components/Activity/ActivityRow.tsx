@@ -25,14 +25,14 @@ import NFTMedia from '../NFTMedia'
 interface ActivityRowProps {
   activity: Activity
   nft: NftToken
-  bnbBusdPrice: Price<Currency, Currency>
+  bnbUsdtPrice: Price<Currency, Currency>
   isUserActivity?: boolean
   isNftActivity?: boolean
 }
 
 const ActivityRow: React.FC<React.PropsWithChildren<ActivityRowProps>> = ({
   activity,
-  bnbBusdPrice,
+  bnbUsdtPrice,
   nft,
   isUserActivity = false,
   isNftActivity = false,
@@ -53,7 +53,7 @@ const ActivityRow: React.FC<React.PropsWithChildren<ActivityRowProps>> = ({
       nft={nft}
       activity={activity}
       localeTimestamp={localeTimestamp}
-      bnbBusdPrice={bnbBusdPrice}
+      bnbUsdtPrice={bnbUsdtPrice}
       isUserActivity={isUserActivity}
     />,
   )
@@ -119,12 +119,12 @@ const ActivityRow: React.FC<React.PropsWithChildren<ActivityRowProps>> = ({
         <Flex alignItems="center" justifyContent="flex-end">
           <ActivityEventText marketEvent={activity.marketEvent} />
         </Flex>
-        {isXs || isSm ? <ActivityPrice price={priceAsFloat} bnbBusdPrice={bnbBusdPrice} /> : null}
+        {isXs || isSm ? <ActivityPrice price={priceAsFloat} bnbUsdtPrice={bnbUsdtPrice} /> : null}
       </Td>
       {isXs || isSm ? null : (
         <>
           <Td>
-            <ActivityPrice price={priceAsFloat} bnbBusdPrice={bnbBusdPrice} />
+            <ActivityPrice price={priceAsFloat} bnbUsdtPrice={bnbUsdtPrice} />
           </Td>
           {isUserActivity ? (
             <Td>

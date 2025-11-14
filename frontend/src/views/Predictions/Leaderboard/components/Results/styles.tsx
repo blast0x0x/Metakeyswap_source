@@ -1,7 +1,7 @@
 import { Token } from '@pancakeswap/sdk'
 import { Flex, FlexProps, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
-import useBUSDPrice from 'hooks/useBUSDPrice'
+import useUSDTPrice from 'hooks/useUSDTPrice'
 import { multiplyPriceByAmount } from 'utils/prices'
 import { useConfig } from 'views/Predictions/context/ConfigProvider'
 
@@ -31,8 +31,8 @@ export const NetWinningsView: React.FC<React.PropsWithChildren<NetWinningsProps 
   textColor = 'text',
   ...props
 }) => {
-  const bnbBusdPrice = useBUSDPrice(token)
-  const value = multiplyPriceByAmount(bnbBusdPrice, Math.abs(amount))
+  const bnbUsdtPrice = useUSDTPrice(token)
+  const value = multiplyPriceByAmount(bnbUsdtPrice, Math.abs(amount))
 
   if (!amount) {
     return null

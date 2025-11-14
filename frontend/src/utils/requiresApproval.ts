@@ -8,6 +8,8 @@ export const requiresApproval = async (
   minimumRequired: number | BigNumber = 0,
 ) => {
   try {
+    console.log("account in requiresApproval: ", account);
+    console.log("spenderAddress in requiresApproval: ", spenderAddress);
     const response = await contract.allowance(account, spenderAddress)
     const hasMinimumRequired =
       (typeof minimumRequired === 'number' && minimumRequired > 0) ||

@@ -4,7 +4,7 @@ import { AutoRenewIcon, Button, Card, CardBody, Flex, Skeleton, Text, ArrowForwa
 import { NextLinkFromReactRouter } from 'components/NextLink'
 import BigNumber from 'bignumber.js'
 import { useTranslation } from '@pancakeswap/localization'
-import { usePriceCakeBusd } from 'state/farms/hooks'
+import { usePriceCakeUsdt } from 'state/farms/hooks'
 import useToast from 'hooks/useToast'
 import { useMasterchef } from 'hooks/useContract'
 import useCatchTxError from 'hooks/useCatchTxError'
@@ -26,14 +26,14 @@ const HarvestCard = () => {
   const { farmsWithStakedBalance, earningsSum: farmEarningsSum } = useFarmsWithBalance()
 
   const masterChefContract = useMasterchef()
-  const cakePriceBusd = usePriceCakeBusd()
-  const earningsBusd = new BigNumber(farmEarningsSum).multipliedBy(cakePriceBusd)
+  const cakePriceUsdt = usePriceCakeUsdt()
+  const earningsUsdt = new BigNumber(farmEarningsSum).multipliedBy(cakePriceUsdt)
   const numTotalToCollect = farmsWithStakedBalance.length
   const numFarmsToCollect = farmsWithStakedBalance.filter((value) => value.pid !== 0).length
   const hasCakePoolToCollect = numTotalToCollect - numFarmsToCollect > 0
 
-  const earningsText = getEarningsText(numFarmsToCollect, hasCakePoolToCollect, earningsBusd, t)
-  const [preText, toCollectText] = earningsText.split(earningsBusd.toString())
+  const earningsText = getEarningsText(numFarmsToCollect, hasCakePoolToCollect, earningsUsdt, t)
+  const [preText, toCollectText] = earningsText.split(earningsUsdt.toString())
 
   const harvestAllFarms = useCallback(async () => {
     for (let i = 0; i < farmsWithStakedBalance.length; i++) {
@@ -63,14 +63,14 @@ const HarvestCard = () => {
                 {preText}
               </Text>
             )}
-            {!earningsBusd.isNaN() ? (
+            {!earningsUsdt.isNaN() ? (
               <Balance
-                decimals={earningsBusd.gt(0) ? 2 : 0}
+                decimals={earningsUsdt.gt(0) ? 2 : 0}
                 fontSize="24px"
                 bold
-                prefix={earningsBusd.gt(0) ? '~$' : '$'}
+                prefix={earningsUsdt.gt(0) ? '~$' : '$'}
                 lineHeight="1.1"
-                value={earningsBusd.toNumber()}
+                value={earningsUsdt.toNumber()}
               />
             ) : (
               <Skeleton width={96} height={24} my="2px" />

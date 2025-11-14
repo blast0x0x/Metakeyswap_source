@@ -5,7 +5,7 @@ import { FetchStatus, LotteryStatus } from 'config/constants/types'
 import { useTranslation } from '@pancakeswap/localization'
 import Image from 'next/image'
 import { memo } from 'react'
-import { usePriceCakeBusd } from 'state/farms/hooks'
+import { usePriceCakeUsdt } from 'state/farms/hooks'
 import { LotteryResponse } from 'state/types'
 import styled from 'styled-components'
 import useSWR from 'swr'
@@ -63,15 +63,15 @@ const isLotteryLive = (status: LotteryStatus) => status === LotteryStatus.OPEN
 
 const LotteryPrice: React.FC<React.PropsWithChildren> = () => {
   const { data } = useSWR<LotteryResponse>(['currentLottery'])
-  const cakePriceBusd = usePriceCakeBusd()
-  const prizeInBusd = new BigNumber(data.amountCollectedInCake).times(cakePriceBusd)
-  const prizeTotal = getBalanceNumber(prizeInBusd)
+  const cakePriceUsdt = usePriceCakeUsdt()
+  const prizeInUsdt = new BigNumber(data.amountCollectedInCake).times(cakePriceUsdt)
+  const prizeTotal = getBalanceNumber(prizeInUsdt)
   const { t } = useTranslation()
 
   if (isLotteryLive(data.status)) {
     return (
       <>
-        {prizeInBusd.isNaN() ? (
+        {prizeInUsdt.isNaN() ? (
           <Skeleton height={20} width={90} display="inline-block" />
         ) : (
           t('Win $%prize% in Lottery', {

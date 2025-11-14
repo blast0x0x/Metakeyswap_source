@@ -5,7 +5,7 @@ import { formatNumber } from 'utils/formatBalance'
 import { multiplyPriceByAmount } from 'utils/prices'
 import { NftToken } from 'state/nftMarket/types'
 import NFTMedia from 'views/Nft/market/components/NFTMedia'
-import { useBNBBusdPrice } from 'hooks/useBUSDPrice'
+import { useBNBUsdtPrice } from 'hooks/useUSDTPrice'
 import BuyModal from '../../../components/BuySellModals/BuyModal'
 import SellModal from '../../../components/BuySellModals/SellModal'
 import { nftsBaseUrl } from '../../../constants'
@@ -23,7 +23,7 @@ const MainPancakeBunnyCard: React.FC<React.PropsWithChildren<MainPancakeBunnyCar
   onSuccessSale,
 }) => {
   const { t } = useTranslation()
-  const bnbBusdPrice = useBNBBusdPrice()
+  const bnbUsdtPrice = useBNBUsdtPrice()
   const { account } = useWeb3React()
 
   const nftToDisplay = cheapestNft || nothingForSaleBunny
@@ -32,7 +32,7 @@ const MainPancakeBunnyCard: React.FC<React.PropsWithChildren<MainPancakeBunnyCar
     ? cheapestNft?.marketData?.currentSeller.toLowerCase() === account.toLowerCase()
     : false
 
-  const priceInUsd = multiplyPriceByAmount(bnbBusdPrice, parseFloat(nftToDisplay?.marketData?.currentAskPrice))
+  const priceInUsd = multiplyPriceByAmount(bnbUsdtPrice, parseFloat(nftToDisplay?.marketData?.currentAskPrice))
   const [onPresentBuyModal] = useModal(<BuyModal nftToBuy={nftToDisplay} />)
   const [onPresentAdjustPriceModal] = useModal(
     <SellModal variant="edit" nftToSell={cheapestNft} onSuccessSale={onSuccessSale} />,
@@ -76,7 +76,7 @@ const MainPancakeBunnyCard: React.FC<React.PropsWithChildren<MainPancakeBunnyCar
                     <Text fontSize="24px" bold mr="4px">
                       {formatNumber(parseFloat(nftToDisplay?.marketData?.currentAskPrice), 0, 5)}
                     </Text>
-                    {bnbBusdPrice ? (
+                    {bnbUsdtPrice ? (
                       <Text color="textSubtle">{`(~${priceInUsd.toLocaleString(undefined, {
                         minimumFractionDigits: 2,
                         maximumFractionDigits: 2,

@@ -18,7 +18,7 @@
       },
       {
         "internalType": "uint256",
-        "name": "_ovePerBlock",
+        "name": "_mkPerBlock",
         "type": "uint256"
       },
       {
@@ -175,7 +175,7 @@
   },
   {
     "inputs": [],
-    "name": "ovePerBlock",
+    "name": "mkPerBlock",
     "outputs": [
       {
         "internalType": "uint256",

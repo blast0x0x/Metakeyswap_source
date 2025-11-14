@@ -2,10 +2,10 @@ describe('Add Liquidity', () => {
   it('loads the two correct tokens', () => {
     cy.visit('/add/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56')
     cy.get('#add-liquidity-select-tokena #pair').should('contain.text', 'CAKE')
-    cy.get('#add-liquidity-select-tokenb #pair').should('contain.text', 'BUSD')
+    cy.get('#add-liquidity-select-tokenb #pair').should('contain.text', 'USDT')
     cy.getBySel('choose-pair-next').click({ force: true })
     cy.get('#add-liquidity-input-tokena #pair').should('contain.text', 'CAKE')
-    cy.get('#add-liquidity-input-tokenb #pair').should('contain.text', 'BUSD')
+    cy.get('#add-liquidity-input-tokenb #pair').should('contain.text', 'USDT')
   })
 
   it('loads the BNB and tokens', () => {
@@ -51,7 +51,7 @@ describe('Add Liquidity', () => {
     cy.visit('/add/0xD74b782E05AA25c50e7330Af541d46E18f36661C')
     cy.get('#add-liquidity-select-tokena #pair').should('contain.text', 'QUACK')
     cy.visit('/add/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56')
-    cy.get('#add-liquidity-select-tokena #pair').should('contain.text', 'BUSD')
+    cy.get('#add-liquidity-select-tokena #pair').should('contain.text', 'USDT')
     cy.visit('/add/BNB')
     cy.get('#add-liquidity-select-tokena #pair').should('contain.text', 'BNB')
   })

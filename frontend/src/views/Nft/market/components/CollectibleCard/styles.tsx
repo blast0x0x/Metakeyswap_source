@@ -41,11 +41,11 @@ export const BNBAmountLabel: React.FC<React.PropsWithChildren<BNBAmountLabelProp
 
 interface CostLabelProps extends FlexProps {
   cost: number
-  bnbBusdPrice: Price<Currency, Currency>
+  bnbUsdtPrice: Price<Currency, Currency>
 }
 
-export const CostLabel: React.FC<React.PropsWithChildren<CostLabelProps>> = ({ cost, bnbBusdPrice, ...props }) => {
-  const priceInUsd = multiplyPriceByAmount(bnbBusdPrice, cost)
+export const CostLabel: React.FC<React.PropsWithChildren<CostLabelProps>> = ({ cost, bnbUsdtPrice, ...props }) => {
+  const priceInUsd = multiplyPriceByAmount(bnbUsdtPrice, cost)
 
   return (
     <Flex alignItems="center" {...props}>
@@ -141,10 +141,10 @@ export const StyledCollectibleCard = styled(Card)`
 interface LowestPriceMetaRowProps {
   lowestPrice: number
   isFetching: boolean
-  bnbBusdPrice: Price<Currency, Currency>
+  bnbUsdtPrice: Price<Currency, Currency>
 }
 
-export const LowestPriceMetaRow = ({ lowestPrice, isFetching, bnbBusdPrice }: LowestPriceMetaRowProps) => {
+export const LowestPriceMetaRow = ({ lowestPrice, isFetching, bnbUsdtPrice }: LowestPriceMetaRowProps) => {
   const { t } = useTranslation()
 
   if (!isFetching && !lowestPrice) {
@@ -156,7 +156,7 @@ export const LowestPriceMetaRow = ({ lowestPrice, isFetching, bnbBusdPrice }: Lo
       {isFetching ? (
         <Skeleton height="24px" width="30px" />
       ) : (
-        <CostLabel cost={lowestPrice} bnbBusdPrice={bnbBusdPrice} />
+        <CostLabel cost={lowestPrice} bnbUsdtPrice={bnbUsdtPrice} />
       )}
     </MetaRow>
   )

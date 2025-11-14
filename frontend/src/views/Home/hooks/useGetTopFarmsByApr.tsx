@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { ChainId } from '@pancakeswap/sdk'
-import { useFarms, usePriceCakeBusd } from 'state/farms/hooks'
+import { useFarms, usePriceCakeUsdt } from 'state/farms/hooks'
 import { useAppDispatch } from 'state'
 import farmsConfig from 'config/constants/farms'
 import { fetchFarmsPublicDataAsync } from 'state/farms'
@@ -15,7 +15,7 @@ const useGetTopFarmsByApr = (isIntersecting: boolean) => {
   const { data: farms, regularCakePerBlock } = useFarms()
   const [fetchStatus, setFetchStatus] = useState(FetchStatus.Idle)
   const [topFarms, setTopFarms] = useState<FarmWithStakedValue[]>([null, null, null, null, null])
-  const cakePriceBusd = usePriceCakeBusd()
+  const cakePriceUsdt = usePriceCakeUsdt()
 
   useEffect(() => {
     const fetchFarmData = async () => {
@@ -40,16 +40,16 @@ const useGetTopFarmsByApr = (isIntersecting: boolean) => {
       const farmsWithPrices = farmsState.filter(
         (farm) =>
           farm.lpTotalInQuoteToken &&
-          farm.quoteTokenPriceBusd &&
+          farm.quoteTokenPriceUsdt &&
           farm.pid !== 0 &&
           farm.multiplier &&
           farm.multiplier !== '0X',
       )
       const farmsWithApr: FarmWithStakedValue[] = farmsWithPrices.map((farm) => {
-        const totalLiquidity = farm.lpTotalInQuoteToken.times(farm.quoteTokenPriceBusd)
+        const totalLiquidity = farm.lpTotalInQuoteToken.times(farm.quoteTokenPriceUsdt)
         const { cakeRewardsApr, lpRewardsApr } = getFarmApr(
           farm.poolWeight,
-          cakePriceBusd,
+          cakePriceUsdt,
           totalLiquidity,
           farm.lpAddresses[ChainId.BSC],
           regularCakePerBlock,
@@ -64,7 +64,7 @@ const useGetTopFarmsByApr = (isIntersecting: boolean) => {
     if (fetchStatus === FetchStatus.Fetched && !topFarms[0]) {
       getTopFarmsByApr(farms)
     }
-  }, [setTopFarms, farms, fetchStatus, cakePriceBusd, topFarms, regularCakePerBlock])
+  }, [setTopFarms, farms, fetchStatus, cakePriceUsdt, topFarms, regularCakePerBlock])
 
   return { topFarms }
 }

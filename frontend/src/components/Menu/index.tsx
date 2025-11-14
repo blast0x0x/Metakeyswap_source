@@ -8,8 +8,8 @@ import { NetworkSwitcher } from 'components/NetworkSwitcher'
 import { NetworkSupportModal } from 'components/NetworkSupportModal'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import useTheme from 'hooks/useTheme'
-// import { usePriceCakeBusd } from 'state/farms/hooks'
-import { useCakeBusdPrice } from 'hooks/useBUSDPrice'
+// import { usePriceCakeUsdt } from 'state/farms/hooks'
+import { useCakeUsdtPrice } from 'hooks/useUSDTPrice'
 import { usePhishingBannerManager } from 'state/user/hooks'
 import UserMenu from './UserMenu'
 import { useMenuItems } from './hooks/useMenuItems'
@@ -20,8 +20,8 @@ import { SettingsMode } from './GlobalSettings/types'
 
 const Menu = (props) => {
   const { isDark, setTheme } = useTheme()
-  // const cakePriceUsd = usePriceCakeBusd()
-  const cakePriceUsd = useCakeBusdPrice()
+  // const cakePriceUsd = usePriceCakeUsdt()
+  const cakePriceUsd = useCakeUsdtPrice()
   const { currentLanguage, setLanguage, t } = useTranslation()
   const { pathname } = useRouter()
   const [showPhishingWarningBanner] = usePhishingBannerManager()

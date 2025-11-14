@@ -4,7 +4,7 @@ import { Price, Currency } from '@pancakeswap/sdk'
 import { Button, Grid, Text, Flex, Box, BinanceIcon, useModal, Skeleton } from '@pancakeswap/uikit'
 import { formatNumber } from 'utils/formatBalance'
 import { ContextApi, useTranslation } from '@pancakeswap/localization'
-import { useBNBBusdPrice } from 'hooks/useBUSDPrice'
+import { useBNBUsdtPrice } from 'hooks/useUSDTPrice'
 import { multiplyPriceByAmount } from 'utils/prices'
 import { NftToken } from 'state/nftMarket/types'
 import BuyModal from 'views/Nft/market/components/BuySellModals/BuyModal'
@@ -25,13 +25,13 @@ const OwnersTableRow = styled(Grid)`
 interface RowProps {
   t: ContextApi['t']
   nft: NftToken
-  bnbBusdPrice: Price<Currency, Currency>
+  bnbUsdtPrice: Price<Currency, Currency>
   account: string
   onSuccessSale: () => void
 }
 
-const Row: React.FC<React.PropsWithChildren<RowProps>> = ({ t, nft, bnbBusdPrice, account, onSuccessSale }) => {
-  const priceInUsd = multiplyPriceByAmount(bnbBusdPrice, parseFloat(nft?.marketData?.currentAskPrice))
+const Row: React.FC<React.PropsWithChildren<RowProps>> = ({ t, nft, bnbUsdtPrice, account, onSuccessSale }) => {
+  const priceInUsd = multiplyPriceByAmount(bnbUsdtPrice, parseFloat(nft?.marketData?.currentAskPrice))
 
   const ownNft = account ? nft.marketData.currentSeller === account.toLowerCase() : false
   const [onPresentBuyModal] = useModal(<BuyModal nftToBuy={nft} />)
@@ -46,7 +46,7 @@ const Row: React.FC<React.PropsWithChildren<RowProps>> = ({ t, nft, bnbBusdPrice
           <BinanceIcon width="24px" height="24px" mr="8px" />
           <Text bold>{formatNumber(parseFloat(nft?.marketData?.currentAskPrice), 0, 5)}</Text>
         </Flex>
-        {bnbBusdPrice ? (
+        {bnbUsdtPrice ? (
           <Text fontSize="12px" color="textSubtle">
             {`(~${formatNumber(priceInUsd, 2, 2)} USD)`}
           </Text>
@@ -94,7 +94,7 @@ interface ForSaleTableRowsProps {
 const ForSaleTableRow: React.FC<React.PropsWithChildren<ForSaleTableRowsProps>> = ({ nftsForSale, onSuccessSale }) => {
   const { account } = useWeb3React()
   const { t } = useTranslation()
-  const bnbBusdPrice = useBNBBusdPrice()
+  const bnbUsdtPrice = useBNBUsdtPrice()
   return (
     <OwnersTableRow>
       {nftsForSale.map((nft) => (
@@ -102,7 +102,7 @@ const ForSaleTableRow: React.FC<React.PropsWithChildren<ForSaleTableRowsProps>> 
           key={nft.tokenId}
           t={t}
           nft={nft}
-          bnbBusdPrice={bnbBusdPrice}
+          bnbUsdtPrice={bnbUsdtPrice}
           account={account}
           onSuccessSale={onSuccessSale}
         />

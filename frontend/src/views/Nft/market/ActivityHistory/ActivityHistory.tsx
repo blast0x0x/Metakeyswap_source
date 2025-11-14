@@ -17,7 +17,7 @@ import Container from 'components/Layout/Container'
 import TableLoader from 'components/TableLoader'
 import { Activity, Collection, NftToken } from 'state/nftMarket/types'
 import { useTranslation } from '@pancakeswap/localization'
-import { useBNBBusdPrice } from 'hooks/useBUSDPrice'
+import { useBNBUsdtPrice } from 'hooks/useUSDTPrice'
 import useTheme from 'hooks/useTheme'
 import { useLastUpdated } from '@pancakeswap/hooks'
 import { useGetNftActivityFilters } from 'state/nftMarket/hooks'
@@ -57,7 +57,7 @@ const ActivityHistory: React.FC<React.PropsWithChildren<ActivityHistoryProps>> =
   const [isInitialized, setIsInitialized] = useState(false)
   const [queryPage, setQueryPage] = useState(1)
   const { lastUpdated, setLastUpdated: refresh } = useLastUpdated()
-  const bnbBusdPrice = useBNBBusdPrice()
+  const bnbUsdtPrice = useBNBUsdtPrice()
   const { isXs, isSm, isMd } = useMatchBreakpointsContext()
 
   const nftActivityFiltersString = JSON.stringify(nftActivityFilters)
@@ -176,7 +176,7 @@ const ActivityHistory: React.FC<React.PropsWithChildren<ActivityHistoryProps>> =
                         key={`${activity.marketEvent}#${activity.nft.tokenId}#${activity.timestamp}#${activity.tx}`}
                         activity={activity}
                         nft={nftMeta}
-                        bnbBusdPrice={bnbBusdPrice}
+                        bnbUsdtPrice={bnbUsdtPrice}
                       />
                     )
                   })

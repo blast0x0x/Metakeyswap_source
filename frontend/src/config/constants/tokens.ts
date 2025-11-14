@@ -89,58 +89,49 @@ export const MK = {
   [ChainId.BSC_TESTNET]: CAKE_TESTNET,
 }
 
-const BUSD_MAINNET = new Token(
+const USDT_MAINNET = new Token(
   ChainId.BSC,
   '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
   18,
-  'BUSD',
+  'USDT',
   'Binance USD',
-  'https://www.paxos.com/busd/',
+  'https://www.paxos.com/usdt/',
 )
 
-const BUSD_TESTNET = new Token(
+const USDT_TESTNET = new Token(
   ChainId.BSC_TESTNET,
   '0xeD24FC36d5Ee211Ea25A80239Fb8C4Cfd80f12Ee',
   18,
-  'BUSD',
+  'USDT',
   'Binance USD',
-  'https://www.paxos.com/busd/',
+  'https://www.paxos.com/usdt/',
 )
 
-const BUSD_ETH = new Token(
-  ChainId.ETHEREUM,
-  '0x4Fabb145d64652a948d72533023f6E7A623C7C53',
-  18,
-  'BUSD',
-  'Binance USD',
-  'https://www.paxos.com/busd/',
-)
-
-const BUSD_RINKEBY = new Token(
+const USDT_RINKEBY = new Token(
   ChainId.RINKEBY,
   '0x4e2442A6f7AeCE64Ca33d31756B5390860BF973E',
   18,
-  'BUSD',
+  'USDT',
   'Binance USD',
-  'https://www.paxos.com/busd/',
+  'https://www.paxos.com/usdt/',
 )
 
-const BUSD_GOERLI = new Token(
+const USDT_GOERLI = new Token(
   ChainId.GOERLI,
   '0xb809b9B2dc5e93CB863176Ea2D565425B03c0540',
   18,
-  'BUSD',
+  'USDT',
   'Binance USD',
-  'https://www.paxos.com/busd/',
+  'https://www.paxos.com/usdt/',
 )
 
-export const BUSD: Record<ChainId, Token> = {
-  [ChainId.ETHEREUM]: BUSD_ETH,
-  [ChainId.RINKEBY]: BUSD_RINKEBY,
-  [ChainId.GOERLI]: BUSD_GOERLI,
-  [ChainId.BSC]: BUSD_MAINNET,
-  [ChainId.BSC_TESTNET]: BUSD_TESTNET,
-}
+// export const USDT: Record<ChainId, Token> = {
+//   [ChainId.ETHEREUM]: USDT_ETH,
+//   [ChainId.RINKEBY]: USDT_RINKEBY,
+//   [ChainId.GOERLI]: USDT_GOERLI,
+//   [ChainId.BSC]: USDT_MAINNET,
+//   [ChainId.BSC_TESTNET]: USDT_TESTNET,
+// }
 
 export const bscTokens = {
   wbnb: WBNB[ChainId.BSC],
@@ -229,7 +220,6 @@ export const bscTokens = {
     'ChainId.BSC Defi blue chips token',
     'https://powerpool.finance/',
   ),
-  busd: BUSD_MAINNET,
   dai: new Token(
     ChainId.BSC,
     '0x1AF3F329e8BE154074D8769D1FFa4eE058B1DBc3',
@@ -2434,7 +2424,7 @@ export const bscTokens = {
 export const bscTestnetTokens = {
   wbnb: WBNB[ChainId.BSC_TESTNET],
   cake: CAKE_TESTNET,
-  busd: BUSD_TESTNET,
+  usdt: USDT_TESTNET,
   syrup: new Token(
     ChainId.BSC_TESTNET,
     '0xfE1e507CeB712BDe086f3579d2c03248b2dB77f9',

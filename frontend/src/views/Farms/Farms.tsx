@@ -7,7 +7,7 @@ import { NextLinkFromReactRouter } from 'components/NextLink'
 import styled from 'styled-components'
 import FlexLayout from 'components/Layout/Flex'
 import Page from 'components/Layout/Page'
-import { useFarms, usePollFarmsWithUserData, usePriceCakeBusd } from 'state/farms/hooks'
+import { useFarms, usePollFarmsWithUserData, usePriceCakeUsdt } from 'state/farms/hooks'
 // import { useCakeVaultUserData } from 'state/pools/hooks'
 import useIntersectionObserver from 'hooks/useIntersectionObserver'
 import { DeserializedFarm } from 'state/types'
@@ -143,7 +143,7 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
   const { pathname, query: urlQuery } = useRouter()
   const { t } = useTranslation()
   const { data: farmsLP, userDataLoaded, poolLength, regularCakePerBlock } = useFarms()
-  const cakePrice = usePriceCakeBusd()
+  const cakePrice = usePriceCakeUsdt()
 
   const [_query, setQuery] = useState('')
   const normalizedUrlSearch = useMemo(() => (typeof urlQuery?.search === 'string' ? urlQuery.search : ''), [urlQuery])
@@ -200,10 +200,10 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
   const farmsList = useCallback(
     (farmsToDisplay: DeserializedFarm[]): FarmWithStakedValue[] => {
       let farmsToDisplayWithAPR: FarmWithStakedValue[] = farmsToDisplay.map((farm) => {
-        if (!farm.lpTotalInQuoteToken || !farm.quoteTokenPriceBusd) {
+        if (!farm.lpTotalInQuoteToken || !farm.quoteTokenPriceUsdt) {
           return farm
         }
-        const totalLiquidity = new BigNumber(farm.lpTotalInQuoteToken).times(farm.quoteTokenPriceBusd)
+        const totalLiquidity = new BigNumber(farm.lpTotalInQuoteToken).times(farm.quoteTokenPriceUsdt)
         const { cakeRewardsApr, lpRewardsApr } = isActive
           ? getFarmApr(
               new BigNumber(farm.poolWeight),

@@ -17,7 +17,7 @@ import {
   farmSelector,
   farmFromLpSymbolSelector,
   priceCakeFromPidSelector,
-  makeBusdPriceFromPidSelector,
+  makeUsdtPriceFromPidSelector,
   makeUserFarmFromPidSelector,
   makeLpTokenPriceFromLpSymbolSelector,
   makeFarmFromPidSelector,
@@ -58,10 +58,10 @@ export const usePollFarmsWithUserData = () => {
 /**
  * Fetches the "core" farm data used globally
  * 2 = CAKE-BNB LP
- * 3 = BUSD-BNB LP
+ * 3 = USDT-BNB LP
  */
 const coreFarmPIDs = {
-  56: [1, 2],
+  56: [1, 2, 3],
   97: [1, 2],
 }
 
@@ -100,8 +100,8 @@ export const useFarmUser = (pid): DeserializedFarmUserData => {
 }
 
 // Return the base token price for a farm, from a given pid
-export const useBusdPriceFromPid = (pid: number): BigNumber => {
-  const busdPriceFromPid = useMemo(() => makeBusdPriceFromPidSelector(pid), [pid])
+export const useUsdtPriceFromPid = (pid: number): BigNumber => {
+  const busdPriceFromPid = useMemo(() => makeUsdtPriceFromPidSelector(pid), [pid])
   return useSelector(busdPriceFromPid)
 }
 
@@ -111,25 +111,25 @@ export const useLpTokenPrice = (symbol: string) => {
 }
 
 /**
- * @@deprecated use the BUSD hook in /hooks
+ * @@deprecated use the USDT hook in /hooks
  */
-export const usePriceCakeBusd = (): BigNumber => {
+export const usePriceCakeUsdt = (): BigNumber => {
   return useSelector(priceCakeFromPidSelector)
 }
 
 export const useFarmWithStakeValue = (farm: DeserializedFarm): FarmWithStakedValue => {
   const { pathname } = useRouter()
-  const cakePrice = usePriceCakeBusd()
+  const cakePrice = usePriceCakeUsdt()
   const { regularCakePerBlock } = useFarms()
 
   const isArchived = pathname.includes('archived')
   const isInactive = pathname.includes('history')
   const isActive = !isInactive && !isArchived
 
-  if (!farm.lpTotalInQuoteToken || !farm.quoteTokenPriceBusd) {
+  if (!farm.lpTotalInQuoteToken || !farm.quoteTokenPriceUsdt) {
     return farm
   }
-  const totalLiquidity = new BigNumber(farm.lpTotalInQuoteToken).times(farm.quoteTokenPriceBusd)
+  const totalLiquidity = new BigNumber(farm.lpTotalInQuoteToken).times(farm.quoteTokenPriceUsdt)
   const { cakeRewardsApr, lpRewardsApr } = isActive
     ? getFarmApr(
         new BigNumber(farm.poolWeight),

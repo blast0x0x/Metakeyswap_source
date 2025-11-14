@@ -18,7 +18,7 @@ import {
 import { getBlockExploreLink } from 'utils'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { useTranslation } from '@pancakeswap/localization'
-import { usePriceCakeBusd } from 'state/farms/hooks'
+import { usePriceCakeUsdt } from 'state/farms/hooks'
 import { Bidder } from 'config/constants/types'
 import WhitelistedBiddersModal from '../WhitelistedBiddersModal'
 
@@ -40,13 +40,13 @@ const GridCell = styled(Flex)<{ isTopPosition: boolean }>`
 
 interface LeaderboardRowProps {
   bidder: Bidder
-  cakePriceBusd: BigNumber
+  cakePriceUsdt: BigNumber
   isMobile: boolean
 }
 
 const LeaderboardRow: React.FC<React.PropsWithChildren<LeaderboardRowProps>> = ({
   bidder,
-  cakePriceBusd,
+  cakePriceUsdt,
   isMobile,
 }) => {
   const { t } = useTranslation()
@@ -79,9 +79,9 @@ const LeaderboardRow: React.FC<React.PropsWithChildren<LeaderboardRowProps>> = (
           <Text bold textTransform="uppercase" width="100%" textAlign="right">
             {getBalanceNumber(amount).toLocaleString()}
           </Text>
-          {cakePriceBusd.gt(0) ? (
+          {cakePriceUsdt.gt(0) ? (
             <Text fontSize="12px" color="textSubtle" textAlign="right">
-              ~${getBalanceNumber(amount.times(cakePriceBusd)).toLocaleString('en', { maximumFractionDigits: 0 })}
+              ~${getBalanceNumber(amount.times(cakePriceUsdt)).toLocaleString('en', { maximumFractionDigits: 0 })}
             </Text>
           ) : (
             <Flex justifyContent="flex-end">
@@ -118,7 +118,7 @@ const AuctionLeaderboardTable: React.FC<React.PropsWithChildren<{ bidders: Bidde
   noBidsText,
 }) => {
   const [visibleBidders, setVisibleBidders] = useState(10)
-  const cakePriceBusd = usePriceCakeBusd()
+  const cakePriceUsdt = usePriceCakeUsdt()
   const { t } = useTranslation()
 
   const { isMobile } = useMatchBreakpointsContext()
@@ -158,7 +158,7 @@ const AuctionLeaderboardTable: React.FC<React.PropsWithChildren<{ bidders: Bidde
         <Box />
         {/* Rows */}
         {bidders.slice(0, visibleBidders).map((bidder) => (
-          <LeaderboardRow key={bidder.account} bidder={bidder} cakePriceBusd={cakePriceBusd} isMobile={isMobile} />
+          <LeaderboardRow key={bidder.account} bidder={bidder} cakePriceUsdt={cakePriceUsdt} isMobile={isMobile} />
         ))}
       </LeaderboardContainer>
       <Flex mt="16px" px="24px" flexDirection="column" justifyContent="center" alignItems="center">

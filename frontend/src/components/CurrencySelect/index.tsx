@@ -5,7 +5,7 @@ import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { useTranslation } from '@pancakeswap/localization'
 import { formatNumber } from 'utils/formatBalance'
 import { useCurrencyBalance } from 'state/wallet/hooks'
-import useBUSDPrice from 'hooks/useBUSDPrice'
+import useUSDTPrice from 'hooks/useUSDTPrice'
 import { CurrencyLogo } from '../Logo'
 import { RowBetween, AutoRow } from '../Layout/Row'
 
@@ -78,7 +78,7 @@ export const CurrencySelect = ({
     />,
   )
 
-  const price = useBUSDPrice(selectedCurrencyBalance && selectedCurrency ? selectedCurrency : undefined)
+  const price = useUSDTPrice(selectedCurrencyBalance && selectedCurrency ? selectedCurrency : undefined)
   const quoted = selectedCurrencyBalance && price?.quote(selectedCurrencyBalance)
 
   return (

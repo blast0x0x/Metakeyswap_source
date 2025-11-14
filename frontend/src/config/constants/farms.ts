@@ -41,21 +41,6 @@ const farms: SerializedFarmConfig[] = [
     token: serializedTokens.mk,
     quoteToken: serializedTokens.wbnb,
   },
-  // {
-  //   pid: 2,
-  //   v1pid: 2,
-  //   lpSymbol: 'USDT-BNB LP',
-  //   lpAddresses: {
-  //     97: '0xa35062141Fa33BCA92Ce69FeD37D0E8908868AAe',
-  //     56: '0x830eCFe7cD92eEAf5fe6E3D8e21c7Abd65d446a4',
-  //   },
-  //   AprlpAddresses: {
-  //     97: '0xa35062141Fa33BCA92Ce69FeD37D0E8908868AAe',
-  //     56: '0x830eCFe7cD92eEAf5fe6E3D8e21c7Abd65d446a4',
-  //   },
-  //   token: serializedTokens.usdt,
-  //   quoteToken: serializedTokens.wbnb,
-  // },
   {
     pid: 2,
     v1pid: 2,
@@ -70,6 +55,21 @@ const farms: SerializedFarmConfig[] = [
     },
     token: serializedTokens.mk,
     quoteToken: serializedTokens.usdt,
+  },
+  {
+    pid: 3,
+    v1pid: 3,
+    lpSymbol: 'USDT-BNB LP',
+    lpAddresses: {
+      97: '0xa35062141Fa33BCA92Ce69FeD37D0E8908868AAe',
+      56: '0x830eCFe7cD92eEAf5fe6E3D8e21c7Abd65d446a4',
+    },
+    AprlpAddresses: {
+      97: '0xa35062141Fa33BCA92Ce69FeD37D0E8908868AAe',
+      56: '0x830eCFe7cD92eEAf5fe6E3D8e21c7Abd65d446a4',
+    },
+    token: serializedTokens.usdt,
+    quoteToken: serializedTokens.wbnb,
   },
   // {
   //   pid: 3,

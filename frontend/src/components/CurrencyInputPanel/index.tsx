@@ -5,7 +5,7 @@ import { isAddress } from 'utils'
 import { useTranslation } from '@pancakeswap/localization'
 import { WrappedTokenInfo } from 'state/types'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
-import { useBUSDCurrencyAmount } from 'hooks/useBUSDPrice'
+import { useUSDTCurrencyAmount } from 'hooks/useUSDTPrice'
 import { formatNumber } from 'utils/formatBalance'
 import { useCurrencyBalance } from '../../state/wallet/hooks'
 import CurrencySearchModal from '../SearchModal/CurrencySearchModal'
@@ -91,7 +91,7 @@ interface CurrencyInputPanelProps {
   beforeButton?: React.ReactNode
   disabled?: boolean
   error?: boolean
-  showBUSD?: boolean
+  showUSDT?: boolean
 }
 export default function CurrencyInputPanel({
   value,
@@ -113,7 +113,7 @@ export default function CurrencyInputPanel({
   commonBasesType,
   disabled,
   error,
-  showBUSD,
+  showUSDT,
 }: CurrencyInputPanelProps) {
   const { account } = useActiveWeb3React()
   const selectedCurrencyBalance = useCurrencyBalance(account ?? undefined, currency ?? undefined)
@@ -122,8 +122,8 @@ export default function CurrencyInputPanel({
   const token = pair ? pair.liquidityToken : currency?.isToken ? currency : null
   const tokenAddress = token ? isAddress(token.address) : null
 
-  const amountInDollar = useBUSDCurrencyAmount(
-    showBUSD ? currency : undefined,
+  const amountInDollar = useUSDTCurrencyAmount(
+    showUSDT ? currency : undefined,
     Number.isFinite(+value) ? +value : undefined,
   )
 
@@ -227,7 +227,7 @@ export default function CurrencyInputPanel({
             />
           </LabelRow>
           <InputRow selected={disableCurrencySelect}>
-            {!!currency && showBUSD && Number.isFinite(amountInDollar) && (
+            {!!currency && showUSDT && Number.isFinite(amountInDollar) && (
               <Text fontSize="12px" color="textSubtle" mr="12px">
                 ~{formatNumber(amountInDollar)} USD
               </Text>

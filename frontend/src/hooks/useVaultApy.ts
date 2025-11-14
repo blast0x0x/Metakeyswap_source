@@ -56,7 +56,7 @@ export function useVaultApy({ duration = MAX_LOCK_DURATION }: { duration?: numbe
     const calls = [
       {
         address: masterChefAddress,
-        name: 'ovePerBlock',
+        name: 'mkPerBlock',
         params: [false],
       },
       {

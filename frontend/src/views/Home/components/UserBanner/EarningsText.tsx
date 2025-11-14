@@ -4,30 +4,30 @@ import BigNumber from 'bignumber.js'
 export const getEarningsText = (
   numFarmsToCollect: number,
   hasCakePoolToCollect: boolean,
-  earningsBusd: BigNumber,
+  earningsUsdt: BigNumber,
   t: ContextApi['t'],
 ): string => {
   const data = {
-    earningsBusd: earningsBusd.toString(),
+    earningsUsdt: earningsUsdt.toString(),
     count: numFarmsToCollect,
   }
 
-  let earningsText = t('%earningsBusd% to collect', data)
+  let earningsText = t('%earningsUsdt% to collect', data)
 
   if (numFarmsToCollect > 0 && hasCakePoolToCollect) {
     if (numFarmsToCollect > 1) {
-      earningsText = t('%earningsBusd% to collect from %count% farms and MK pool', data)
+      earningsText = t('%earningsUsdt% to collect from %count% farms and MK pool', data)
     } else {
-      earningsText = t('%earningsBusd% to collect from %count% farm and MK pool', data)
+      earningsText = t('%earningsUsdt% to collect from %count% farm and MK pool', data)
     }
   } else if (numFarmsToCollect > 0) {
     if (numFarmsToCollect > 1) {
-      earningsText = t('%earningsBusd% to collect from %count% farms', data)
+      earningsText = t('%earningsUsdt% to collect from %count% farms', data)
     } else {
-      earningsText = t('%earningsBusd% to collect from %count% farm', data)
+      earningsText = t('%earningsUsdt% to collect from %count% farm', data)
     }
   } else if (hasCakePoolToCollect) {
-    earningsText = t('%earningsBusd% to collect from MK pool', data)
+    earningsText = t('%earningsUsdt% to collect from MK pool', data)
   }
 
   return earningsText

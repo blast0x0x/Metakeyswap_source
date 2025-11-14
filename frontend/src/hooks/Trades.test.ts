@@ -15,8 +15,8 @@ describe('Trade', () => {
   //     it('should filter only exist Pair', () => {
   //       mockUsePairs.mockReturnValue([
   //         [PairState.EXISTS, new Pair(new TokenAmount(bscTokens.wbnb, '1'), new TokenAmount(bscTokens.cake, '1'))],
-  //         [PairState.INVALID, new Pair(new TokenAmount(bscTokens.busd, '1'), new TokenAmount(bscTokens.cake, '1'))],
-  //         [PairState.LOADING, new Pair(new TokenAmount(bscTokens.busd, '1'), new TokenAmount(bscTokens.wbnb, '1'))],
+  //         [PairState.INVALID, new Pair(new TokenAmount(bscTokens.usdt, '1'), new TokenAmount(bscTokens.cake, '1'))],
+  //         [PairState.LOADING, new Pair(new TokenAmount(bscTokens.usdt, '1'), new TokenAmount(bscTokens.wbnb, '1'))],
   //         [PairState.EXISTS, null],
   //       ])
   //       const { result } = renderHook(() => {

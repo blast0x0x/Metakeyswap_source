@@ -1,6 +1,6 @@
 import { BinanceIcon, Box, Button, Card, CardBody, Flex, Skeleton, Text, useModal } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
-import { useBNBBusdPrice } from 'hooks/useBUSDPrice'
+import { useBNBUsdtPrice } from 'hooks/useUSDTPrice'
 
 import { NftToken } from 'state/nftMarket/types'
 import { multiplyPriceByAmount } from 'utils/prices'
@@ -26,10 +26,10 @@ const MainNFTCard: React.FC<React.PropsWithChildren<MainNFTCardProps>> = ({
   onSuccess,
 }) => {
   const { t } = useTranslation()
-  const bnbBusdPrice = useBNBBusdPrice()
+  const bnbUsdtPrice = useBNBUsdtPrice()
 
   const currentAskPriceAsNumber = nft?.marketData?.currentAskPrice ? parseFloat(nft.marketData?.currentAskPrice) : 0
-  const priceInUsd = multiplyPriceByAmount(bnbBusdPrice, currentAskPriceAsNumber)
+  const priceInUsd = multiplyPriceByAmount(bnbUsdtPrice, currentAskPriceAsNumber)
   const [onPresentBuyModal] = useModal(<BuyModal nftToBuy={nft} />)
   const [onPresentSellModal] = useModal(
     <SellModal variant={nft.marketData?.isTradable ? 'edit' : 'sell'} nftToSell={nft} onSuccessSale={onSuccess} />,
@@ -84,7 +84,7 @@ const MainNFTCard: React.FC<React.PropsWithChildren<MainNFTCardProps>> = ({
                   <Text fontSize="24px" bold mr="4px">
                     {formatNumber(currentAskPriceAsNumber, 0, 5)}
                   </Text>
-                  {bnbBusdPrice ? (
+                  {bnbUsdtPrice ? (
                     <Text color="textSubtle">{`(~${priceInUsd.toLocaleString(undefined, {
                       minimumFractionDigits: 2,
                       maximumFractionDigits: 2,

@@ -24,7 +24,7 @@ import { REWARD_RATE } from 'state/predictions/config'
 import { fetchNodeHistory, markAsCollected } from 'state/predictions'
 import { Bet } from 'state/types'
 import { useTranslation } from '@pancakeswap/localization'
-import useBUSDPrice from 'hooks/useBUSDPrice'
+import useUSDTPrice from 'hooks/useUSDTPrice'
 import useToast from 'hooks/useToast'
 import { usePredictionsContract } from 'hooks/useContract'
 import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
@@ -99,10 +99,10 @@ const CollectRoundWinningsModal: React.FC<React.PropsWithChildren<CollectRoundWi
   const { fetchWithCatchTxError, loading: isPendingTx } = useCatchTxError()
   const { callWithGasPrice } = useCallWithGasPrice()
   const predictionsContract = usePredictionsContract(predictionsAddress, token.symbol)
-  const bnbBusdPrice = useBUSDPrice(token)
+  const bnbUsdtPrice = useUSDTPrice(token)
 
   const { epochs, total } = calculateClaimableRounds(history)
-  const totalBnb = multiplyPriceByAmount(bnbBusdPrice, total)
+  const totalBnb = multiplyPriceByAmount(bnbUsdtPrice, total)
 
   const isLoading = isLoadingHistory || !epochs?.length
 

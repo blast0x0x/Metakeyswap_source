@@ -17,7 +17,7 @@ import {
 import { useWeb3React } from '@pancakeswap/wagmi'
 import { LotteryStatus } from 'config/constants/types'
 import { useTranslation } from '@pancakeswap/localization'
-import { usePriceCakeBusd } from 'state/farms/hooks'
+import { usePriceCakeUsdt } from 'state/farms/hooks'
 import { useLottery } from 'state/lottery/hooks'
 import { getBalanceNumber } from 'utils/formatBalance'
 import Balance from 'components/Balance'
@@ -66,8 +66,8 @@ const NextDrawCard = () => {
   const [isExpanded, setIsExpanded] = useState(false)
   const ticketBuyIsDisabled = status !== LotteryStatus.OPEN || isTransitioning
 
-  const cakePriceBusd = usePriceCakeBusd()
-  const prizeInBusd = amountCollectedInCake.times(cakePriceBusd)
+  const cakePriceUsdt = usePriceCakeUsdt()
+  const prizeInUsdt = amountCollectedInCake.times(cakePriceUsdt)
   const endTimeMs = parseInt(endTime, 10) * 1000
   const endDate = new Date(endTimeMs)
   const isLotteryOpen = status === LotteryStatus.OPEN
@@ -83,7 +83,7 @@ const NextDrawCard = () => {
     }
     return (
       <>
-        {prizeInBusd.isNaN() ? (
+        {prizeInUsdt.isNaN() ? (
           <Skeleton my="7px" height={40} width={160} />
         ) : (
           <Balance
@@ -93,11 +93,11 @@ const NextDrawCard = () => {
             lineHeight="1"
             bold
             prefix="~$"
-            value={getBalanceNumber(prizeInBusd)}
+            value={getBalanceNumber(prizeInUsdt)}
             decimals={0}
           />
         )}
-        {prizeInBusd.isNaN() ? (
+        {prizeInUsdt.isNaN() ? (
           <Skeleton my="2px" height={14} width={90} />
         ) : (
           <Balance

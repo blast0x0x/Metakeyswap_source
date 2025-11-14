@@ -11,7 +11,7 @@ import { getAddress } from 'utils/addressHelpers'
 import { useERC20 } from 'hooks/useContract'
 import { TransactionResponse } from '@ethersproject/providers'
 
-import { usePriceCakeBusd } from 'state/farms/hooks'
+import { usePriceCakeUsdt } from 'state/farms/hooks'
 import { BIG_ZERO } from 'utils/bigNumber'
 import { getBalanceAmount } from 'utils/formatBalance'
 import { useWeb3React } from '@pancakeswap/wagmi'
@@ -61,9 +61,9 @@ export const HarvestAction: React.FunctionComponent<React.PropsWithChildren<Harv
   const { toastSuccess } = useToast()
   const { fetchWithCatchTxError, loading: pendingTx } = useCatchTxError()
   const earningsBigNumber = new BigNumber(userData.earnings)
-  const cakePrice = usePriceCakeBusd()
+  const cakePrice = usePriceCakeUsdt()
   let earnings = BIG_ZERO
-  let earningsBusd = 0
+  let earningsUsdt = 0
   let displayBalance = userDataReady ? earnings.toFixed(5, BigNumber.ROUND_DOWN) : <Skeleton width={60} />
   const toolTipBalance = earningsBigNumber.isGreaterThan(new BigNumber(0.00001)) ? displayBalance : `< 0.00001`
   const { targetRef, tooltip, tooltipVisible } = useTooltip(
@@ -78,7 +78,7 @@ export const HarvestAction: React.FunctionComponent<React.PropsWithChildren<Harv
   // If user didn't connect wallet default balance will be 0
   if (!earningsBigNumber.isZero()) {
     earnings = getBalanceAmount(earningsBigNumber)
-    earningsBusd = earnings.multipliedBy(cakePrice).toNumber()
+    earningsUsdt = earnings.multipliedBy(cakePrice).toNumber()
     displayBalance = earnings.toFixed(5, BigNumber.ROUND_DOWN)
   }
 
@@ -104,8 +104,8 @@ export const HarvestAction: React.FunctionComponent<React.PropsWithChildren<Harv
           ) : (
             <Heading>{displayBalance}</Heading>
           )}
-          {earningsBusd > 0 && (
-            <Balance fontSize="12px" color="textSubtle" decimals={2} value={earningsBusd} unit=" USD" prefix="~" />
+          {earningsUsdt > 0 && (
+            <Balance fontSize="12px" color="textSubtle" decimals={2} value={earningsUsdt} unit=" USD" prefix="~" />
           )}
         </div>
         <Button
