@@ -61,17 +61,17 @@ const config: (t: ContextApi['t'], isDark: boolean, languageCode?: string, chain
         
         ],
       },
-      {
-        label: t('Limit'),
-        icon: SwapIcon,
-        supportChainIds: [ChainId.BSC],
-        href: '/limit-orders',
-        showItemsOnMobile: false,
-        image: '/images/decorations/3d-coin.png',
-        items: [
+      // {
+      //   label: t('Limit'),
+      //   icon: SwapIcon,
+      //   supportChainIds: [ChainId.BSC],
+      //   href: '/limit-orders',
+      //   showItemsOnMobile: false,
+      //   image: '/images/decorations/3d-coin.png',
+      //   items: [
         
-        ],
-      },
+      //   ],
+      // },
 
       {
         label: t('Farms'),

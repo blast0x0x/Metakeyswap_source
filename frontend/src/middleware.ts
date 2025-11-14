@@ -33,7 +33,7 @@ export const config = {
     '/remove',
     '/prediction',
     '/find',
-    '/limit-orders',
+    // '/limit-orders',
     '/lottery',
     // '/nfts',
   ],
