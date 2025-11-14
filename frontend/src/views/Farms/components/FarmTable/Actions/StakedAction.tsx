@@ -84,8 +84,6 @@ export const ProxyStakedContainer = ({ children, ...props }) => {
 
   const { allowance } = props.userData || {}
 
-  console.log("allowance = ", allowance);
-
   const isApproved = account && allowance && allowance.isGreaterThan(0)
 
   return children({

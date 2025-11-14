@@ -31,6 +31,7 @@ const FarmsPage = () => {
   const { account } = useWeb3React()
   const { chosenFarmsMemoized } = useContext(FarmsContext)
   const cakePrice = usePriceCakeUsdt()
+  console.log("chosenFarmsMemoized = ", chosenFarmsMemoized)
   return (
     <>
       {chosenFarmsMemoized.map((farm) =>
