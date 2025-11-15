@@ -78,6 +78,8 @@ export const walletConnectConnector = new WalletConnectConnector({
   chains,
   options: {
     qrcode: true,
+    // Better mobile support
+    bridge: 'https://bridge.walletconnect.org',
   },
 })
 
