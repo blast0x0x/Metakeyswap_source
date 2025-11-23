@@ -30,7 +30,7 @@ export const socials = [
   {
     label: "WhitePepar",
     icon: ListViewIcon,
-    href: "https://drive.google.com/file/d/1fRCgnI3GejlFQa4BlXWObT5198WJztLe/view",
+    href: "https://drive.google.com/file/d/1wTeag5uBzaypdJflZmGtKBkM08pafswc/view",
   },
   {
     label: "List token Farms",

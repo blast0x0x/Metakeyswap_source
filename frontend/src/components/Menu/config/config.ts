@@ -174,7 +174,7 @@ const config: (t: ContextApi['t'], isDark: boolean, languageCode?: string, chain
 
           {
             label: t('WhitePepar'),
-            href: 'https://drive.google.com/file/d/1fRCgnI3GejlFQa4BlXWObT5198WJztLe/view',
+            href: 'https://drive.google.com/file/d/1wTeag5uBzaypdJflZmGtKBkM08pafswc/view',
             type: DropdownMenuItemType.EXTERNAL_LINK,
           },
 
