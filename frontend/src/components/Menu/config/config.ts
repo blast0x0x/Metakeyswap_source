@@ -97,6 +97,18 @@ const config: (t: ContextApi['t'], isDark: boolean, languageCode?: string, chain
         
         ],
       },
+      {
+        label: t('Takarabako'),
+        href: 'https://takarabako.meme',
+        icon: NftIcon,
+        showItemsOnMobile: false,
+        fillIcon: EarnFillIcon,
+        supportChainIds: [ChainId.BSC],
+        image: '/images/decorations/pe2.png',
+        items: [
+        
+        ],
+      },
       // {
       //   label: t('Launch'),
       //   href: '/launch',
