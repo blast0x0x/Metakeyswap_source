@@ -191,6 +191,12 @@ const config: (t: ContextApi['t'], isDark: boolean, languageCode?: string, chain
           },
 
           {
+            label: t('Documentation'),
+            href: 'https://takarabako.gitbook.io/metakeyswap',
+            type: DropdownMenuItemType.EXTERNAL_LINK,
+          },
+
+          {
             label: t('List token Farms'),
             href: 'https://docs.google.com/forms/d/e/1FAIpQLSf409vpBq9SmIhg29gPp6sBFwe1ofcAdZ9uF7m-WW0B_3zKQA/viewform?usp=dialog',
             type: DropdownMenuItemType.EXTERNAL_LINK,

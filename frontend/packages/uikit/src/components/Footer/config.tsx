@@ -1,6 +1,6 @@
 import { Language } from "../LangSelector/types";
 import { FooterLinkType } from "./types";
-import { TwitterIcon, TelegramIcon, BscScanIcon, ListViewIcon, FarmIcon, MailIcon, RedditIcon, InstagramIcon, GithubIcon, DiscordIcon, MediumIcon } from "../Svg";
+import { TwitterIcon, TelegramIcon, BscScanIcon, ListViewIcon, FarmIcon, MailIcon, RedditIcon, InstagramIcon, GitbookIcon, DiscordIcon, MediumIcon } from "../Svg";
 
 export const footerLinks: FooterLinkType[] = [
   
@@ -31,6 +31,11 @@ export const socials = [
     label: "WhitePepar",
     icon: ListViewIcon,
     href: "https://drive.google.com/file/d/1wTeag5uBzaypdJflZmGtKBkM08pafswc/view",
+  },
+  {
+    label: "Documentation",
+    icon: GitbookIcon,
+    href: "https://takarabako.gitbook.io/metakeyswap",
   },
   {
     label: "List token Farms",
