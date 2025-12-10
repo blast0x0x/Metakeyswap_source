@@ -75,6 +75,14 @@
       "logoURI": "https://metakeyswap.com/images/tokens/0x249155D6F660fB1bc2d2820391418dD9c8d2A198.png"
     },
     {
+      "name": "MiningNest",
+      "symbol": "MN",
+      "address": "0xF02b1AB128715BA6BDC2d10b54876Eb041D53cEA",
+      "chainId": 56,
+      "decimals": 1,
+      "logoURI": "https://metakeyswap.com/images/tokens/0xF02b1AB128715BA6BDC2d10b54876Eb041D53cEA.png"
+    },
+    {
       "name": "Venus",
       "symbol": "XVS",
       "address": "0xcF6BB5389c92Bdda8a3747Ddb454cB7a64626C63",

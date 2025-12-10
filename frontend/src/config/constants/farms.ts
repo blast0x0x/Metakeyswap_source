@@ -71,51 +71,96 @@ const farms: SerializedFarmConfig[] = [
     token: serializedTokens.usdt,
     quoteToken: serializedTokens.wbnb,
   },
-  // {
-  //   pid: 3,
-  //   v1pid: 3,
-  //   lpSymbol: 'USDR-MK LP',
-  //   lpAddresses: {
-  //     97: '0x290AA189F556D4cf03d80640F0D1D174A29856Ff',
-  //     56: '0x290AA189F556D4cf03d80640F0D1D174A29856Ff',
-  //   },
-  //   AprlpAddresses: {
-  //     97: '0x290AA189F556D4cf03d80640F0D1D174A29856Ff',
-  //     56: '0x290AA189F556D4cf03d80640F0D1D174A29856Ff',
-  //   },
-  //   token: serializedTokens.usdr,
-  //   quoteToken: serializedTokens.mk,
-  // },
-  // {
-  //   pid: 4,
-  //   v1pid: 4,
-  //   lpSymbol: 'USDR-BNB LP',
-  //   lpAddresses: {
-  //     97: '0x14DE25325C518d465592266cF7D5041C6BD5CAB3',
-  //     56: '0x14DE25325C518d465592266cF7D5041C6BD5CAB3',
-  //   },
-  //   AprlpAddresses: {
-  //     97: '0x14DE25325C518d465592266cF7D5041C6BD5CAB3',
-  //     56: '0x14DE25325C518d465592266cF7D5041C6BD5CAB3',
-  //   },
-  //   token: serializedTokens.usdr,
-  //   quoteToken: serializedTokens.wbnb,
-  // },
-  // {
-  //   pid: 5,
-  //   v1pid: 5,
-  //   lpSymbol: 'USDR-USDT LP',
-  //   lpAddresses: {
-  //     97: '0xe7213e122e274e5ea5f457f101b1584543504b27',
-  //     56: '0xe7213e122e274e5ea5f457f101b1584543504b27',
-  //   },
-  //   AprlpAddresses: {
-  //     97: '0xe7213e122e274e5ea5f457f101b1584543504b27',
-  //     56: '0xe7213e122e274e5ea5f457f101b1584543504b27',
-  //   },
-  //   token: serializedTokens.usdr,
-  //   quoteToken: serializedTokens.usdt,
-  // },  
+  {
+    pid: 4,
+    v1pid: 4,
+    lpSymbol: 'USDR-MK LP',
+    lpAddresses: {
+      97: '0x290AA189F556D4cf03d80640F0D1D174A29856Ff',
+      56: '0x290AA189F556D4cf03d80640F0D1D174A29856Ff',
+    },
+    AprlpAddresses: {
+      97: '0x290AA189F556D4cf03d80640F0D1D174A29856Ff',
+      56: '0x290AA189F556D4cf03d80640F0D1D174A29856Ff',
+    },
+    token: serializedTokens.usdr,
+    quoteToken: serializedTokens.mk,
+  },
+  {
+    pid: 5,
+    v1pid: 5,
+    lpSymbol: 'USDR-BNB LP',
+    lpAddresses: {
+      97: '0x14DE25325C518d465592266cF7D5041C6BD5CAB3',
+      56: '0x14DE25325C518d465592266cF7D5041C6BD5CAB3',
+    },
+    AprlpAddresses: {
+      97: '0x14DE25325C518d465592266cF7D5041C6BD5CAB3',
+      56: '0x14DE25325C518d465592266cF7D5041C6BD5CAB3',
+    },
+    token: serializedTokens.usdr,
+    quoteToken: serializedTokens.wbnb,
+  },
+  {
+    pid: 6,
+    v1pid: 6,
+    lpSymbol: 'USDR-USDT LP',
+    lpAddresses: {
+      97: '0xE7213e122e274E5eA5F457F101B1584543504b27',
+      56: '0xE7213e122e274E5eA5F457F101B1584543504b27',
+    },
+    AprlpAddresses: {
+      97: '0xE7213e122e274E5eA5F457F101B1584543504b27',
+      56: '0xE7213e122e274E5eA5F457F101B1584543504b27',
+    },
+    token: serializedTokens.usdr,
+    quoteToken: serializedTokens.usdt,
+  },
+  {
+    pid: 7,
+    v1pid: 7,
+    lpSymbol: 'MN-MK LP',
+    lpAddresses: {
+      97: '0x5bD78eD9201af30cD920628E1fE158E2a07b3BC1',
+      56: '0x5bD78eD9201af30cD920628E1fE158E2a07b3BC1',
+    },
+    AprlpAddresses: {
+      97: '0x5bD78eD9201af30cD920628E1fE158E2a07b3BC1',
+      56: '0x5bD78eD9201af30cD920628E1fE158E2a07b3BC1',
+    },
+    token: serializedTokens.mn,
+    quoteToken: serializedTokens.mk,
+  },
+  {
+    pid: 8,
+    v1pid: 8,
+    lpSymbol: 'MN-BNB LP',
+    lpAddresses: {
+      97: '0x37632ec85c52a67feacb68e36961672a61424fd7',
+      56: '0x37632ec85c52a67feacb68e36961672a61424fd7',
+    },
+    AprlpAddresses: {
+      97: '0x37632ec85c52a67feacb68e36961672a61424fd7',
+      56: '0x37632ec85c52a67feacb68e36961672a61424fd7',
+    },
+    token: serializedTokens.mn,
+    quoteToken: serializedTokens.wbnb,
+  },
+  {
+    pid: 9,
+    v1pid: 9,
+    lpSymbol: 'MN-USDT LP',
+    lpAddresses: {
+      97: '0x250c1c651ab843b08caafe8bb3dbada18e7ba62e',
+      56: '0x250c1c651ab843b08caafe8bb3dbada18e7ba62e',
+    },
+    AprlpAddresses: {
+      97: '0x250c1c651ab843b08caafe8bb3dbada18e7ba62e',
+      56: '0x250c1c651ab843b08caafe8bb3dbada18e7ba62e',
+    },
+    token: serializedTokens.mn,
+    quoteToken: serializedTokens.usdt,
+  },
 ]
 
 export default farms

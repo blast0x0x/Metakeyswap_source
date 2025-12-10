@@ -160,6 +160,14 @@ export const bscTokens = {
     'USDR',
     'https://metakeyswap.com',
   ),
+  mn: new Token(
+    ChainId.BSC,
+    '0xF02b1AB128715BA6BDC2d10b54876Eb041D53cEA',
+    1,
+    'MiningNest',
+    'MN',
+    'https://metakeyswap.com',
+  ),
   cake: CAKE_MAINNET,
   gmi: new Token(ChainId.BSC, '0x93D8d25E3C9A847a5Da79F79ecaC89461FEcA846', 18, 'GMI', 'Gamifi', 'https://gamifi.gg/'),
   tlos: new Token(
